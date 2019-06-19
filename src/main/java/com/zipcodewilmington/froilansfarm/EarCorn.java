@@ -1,5 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class EarCorn {
+public class EarCorn extends Edible {
 
 }

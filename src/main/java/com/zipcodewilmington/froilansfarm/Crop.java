@@ -5,4 +5,5 @@ public abstract class Crop implements Produce{
     Boolean hasBeenHarvested;
 
     public abstract Edible yield(Crop crop);
+    public abstract void isReadyToHarvest();
 }

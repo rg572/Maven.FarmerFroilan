@@ -1,4 +1,12 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Field {
+import java.util.ArrayList;
+
+public class Field<CropRow>{
+    private ArrayList<CropRow> cropRows;
+
+    public Field() {
+
+    }
+    public void plantRow(CropRow cropRow){}
 }

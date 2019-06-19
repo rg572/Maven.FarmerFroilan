@@ -4,4 +4,8 @@ public class TomatoPlant extends Crop {
     public Tomato yield(Crop crop) {
         return null;
     }
+
+    public void isReadyToHarvest() {
+
+    }
 }
