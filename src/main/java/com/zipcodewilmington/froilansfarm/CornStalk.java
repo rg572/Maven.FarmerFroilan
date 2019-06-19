@@ -2,7 +2,12 @@ package com.zipcodewilmington.froilansfarm;
 
 public class CornStalk extends Crop {
 
-    public EarCorn yield(Crop crop) {
+
+    public void isReadyToHarvest() {
+
+    }
+
+    public Edible yield() {
         return null;
     }
 }

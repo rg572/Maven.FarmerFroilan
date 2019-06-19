@@ -1,7 +1,12 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class SoyPlant extends Crop {
-    public Edamame yield(Crop crop) {
+
+    public void isReadyToHarvest() {
+
+    }
+
+    public Edible yield() {
         return null;
     }
 }

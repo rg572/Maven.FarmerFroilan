@@ -1,4 +1,12 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Storage<T> {
+public abstract class Storage<T> {
+
+    abstract void cleanUp();
+    abstract T find();
+    abstract T remove();
+    abstract T add();
+
+
+
 }
