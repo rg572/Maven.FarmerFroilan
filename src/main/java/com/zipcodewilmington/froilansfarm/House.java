@@ -1,25 +1,20 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class House<T extends Person> extends AnimalStorage<T> {
+public class House extends AnimalStorage<Person> {
 
 
-    @Override
-    void cleanUp(T t) {
-        
+    void cleanUp() {
     }
 
-    @Override
-    T find(T t) {
+    Integer find(Person person) {
         return null;
     }
 
-    @Override
-    void remove(T t) {
+    void remove(Person person) {
 
     }
 
-    @Override
-    void add(T t) {
+    void add(Person person) {
 
     }
 }

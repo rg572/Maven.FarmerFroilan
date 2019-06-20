@@ -1,35 +1,19 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class EdibleStorage<T extends Edible> extends Storage {
+public abstract class EdibleStorage<T extends Edible> extends Storage<T> {
     void cleanUp() {
-
     }
+    
 
-    Object find() {
+    Integer find(T t) {
         return null;
     }
 
-    Object remove() {
-        return null;
-    }
-
-    Object add() {
-        return null;
-    }
-
-    void cleanUp(Object o) {
+    void remove(T t) {
 
     }
 
-    Object find(Object o) {
-        return null;
-    }
-
-    void remove(Object o) {
-
-    }
-
-    void add(Object o) {
+    void add(T t) {
 
     }
 }
