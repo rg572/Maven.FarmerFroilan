@@ -1,19 +1,27 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class ChickenCoop extends AnimalStorage {
-    void cleanUp() {
+public class ChickenCoop extends AnimalStorage<Chicken>{
+
+
+    @Override
+    void cleanUp(Chicken chicken) {
 
     }
 
-    Object find() {
+    @Override
+    Chicken find(Chicken chicken) {
         return null;
     }
 
-    Object remove() {
-        return null;
+    @Override
+    void remove(Chicken chicken) {
+
     }
 
-    Object add() {
-        return null;
+    @Override
+    void add(Chicken chicken) {
+
     }
 }
+
+
