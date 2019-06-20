@@ -2,10 +2,11 @@ package com.zipcodewilmington.froilansfarm;
 
 public abstract class Storage<T> {
 
-    abstract void cleanUp();
-    abstract T find();
-    abstract T remove();
-    abstract T add();
+    abstract void cleanUp(T t);
+    abstract T find(T t);
+    abstract void remove(T t);
+    abstract void add(T t);
+
 
 
 
