@@ -1,9 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
 
-public class Botanist extends Person{
-   public void plant(Crop crop){
+public interface Botanist{
 
-   }
+   public void plant(Crop crop);
 
 }

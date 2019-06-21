@@ -1,17 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Farmer  extends Botanist implements Eater, Rider {
-    private Horse currentSteed;
+public interface Farmer extends Rider, Botanist, Eater {
 
-    public void eat(Edible edible) {
+    public void eat(Edible edible);
 
-    }
+    public void mount(Rideable rideable);
 
-    public void mount() {
-
-    }
-
-    public void dismount() {
-
-    }
+    public void dismount(Rideable rideable);
 }
