@@ -3,18 +3,18 @@ package com.zipcodewilmington.froilansfarm;
 public class House extends AnimalStorage<Person> {
 
 
-    void cleanUp() {
+    public void cleanUp() {
     }
 
-    Integer find(Person person) {
+    public Integer find(Person person) {
         return null;
     }
 
-    void remove(Person person) {
+    public void remove(Person person) {
 
     }
 
-    void add(Person person) {
+    public void add(Person person) {
 
     }
 }

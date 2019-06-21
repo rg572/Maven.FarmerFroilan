@@ -2,24 +2,17 @@ package com.zipcodewilmington.froilansfarm;
 
 public class Stable extends AnimalStorage<Horse> {
 
-
-    @Override
-    void cleanUp() {
-
+    public void cleanUp() {
     }
 
-    @Override
-    Integer find(Horse horse) {
+    public Integer find(Horse horse) {
         return null;
     }
 
-    @Override
-    void remove(Horse horse) {
-
+    public void remove(Horse horse) {
     }
 
-    @Override
-    void add(Horse horse) {
+    public void add(Horse horse) {
 
     }
 }
