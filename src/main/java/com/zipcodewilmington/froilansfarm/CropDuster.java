@@ -10,4 +10,8 @@ public class CropDuster extends Aircraft implements FarmVehicle{
     public String makeNoise() {
         return "PshhhPshhhPshhh";
     }
+
+    public void fly() {
+
+    }
 }
