@@ -10,7 +10,6 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
     }
 
     void remove(T t) {
-
     }
 
     void add(T t) {
