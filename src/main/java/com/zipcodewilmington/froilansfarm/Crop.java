@@ -2,7 +2,22 @@ package com.zipcodewilmington.froilansfarm;
 
 public abstract class Crop implements Produce{
     Boolean hasBeenFertilized;
-    Boolean hasBeenHarvested;
+    Boolean readyForHarvest;
 
-    public abstract void isReadyToHarvest();
+    public Boolean getHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public void setHasBeenFertilized(Boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
+    public Boolean getReadyForHarvest() {
+        return readyForHarvest;
+    }
+
+    public void setReadyForHarvest(Boolean readyForHarvest) {
+        this.readyForHarvest = readyForHarvest;
+    }
+
 }

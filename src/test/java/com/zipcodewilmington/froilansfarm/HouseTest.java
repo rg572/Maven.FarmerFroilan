@@ -28,10 +28,10 @@ public class HouseTest {
     @Test
     public void properTypesTest3(){
         // Arrange
-        House house = new House();
+       // House house = new House();
 
         // Act
-        house.add(new Horse());
+        //house.add(new Horse());
     }
 
 

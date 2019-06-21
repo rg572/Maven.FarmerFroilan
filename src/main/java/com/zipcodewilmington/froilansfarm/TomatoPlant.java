@@ -1,13 +1,13 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class TomatoPlant extends Crop {
-
-
-    public void isReadyToHarvest() {
-
-    }
+    protected Tomato tomato;
 
     public Edible yield() {
-        return null;
+        if (this.getReadyForHarvest()) {
+            this.setHasBeenFertilized(false);
+            this.setReadyForHarvest(false);
+            return tomato;
+        } return null;
     }
 }

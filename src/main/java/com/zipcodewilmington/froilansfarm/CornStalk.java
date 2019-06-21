@@ -1,13 +1,13 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class CornStalk extends Crop {
-
-
-    public void isReadyToHarvest() {
-
-    }
+    protected EarCorn earCorn;
 
     public Edible yield() {
-        return null;
+        if (this.getReadyForHarvest()) {
+            this.setHasBeenFertilized(false);
+            this.setReadyForHarvest(false);
+            return earCorn;
+        } else {return null;}
     }
 }

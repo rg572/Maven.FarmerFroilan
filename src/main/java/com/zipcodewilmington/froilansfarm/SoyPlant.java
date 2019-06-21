@@ -1,12 +1,13 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class SoyPlant extends Crop {
-
-    public void isReadyToHarvest() {
-
-    }
+    protected Edamame edamame;
 
     public Edible yield() {
-        return null;
+        if (this.getReadyForHarvest()) {
+            this.setHasBeenFertilized(false);
+            this.setReadyForHarvest(false);
+            return edamame;
+        } else {return null;}
     }
 }
