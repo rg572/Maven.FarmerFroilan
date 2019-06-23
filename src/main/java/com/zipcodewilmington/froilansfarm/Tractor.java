@@ -13,4 +13,9 @@ public class Tractor extends Vehicle implements FarmVehicle {
     public String makeNoise() {
         return "Purrrrrrr";
     }
+
+    @Override
+    public String getName() {
+        return "Tractor";
+    }
 }
