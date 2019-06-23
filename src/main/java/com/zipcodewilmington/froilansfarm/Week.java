@@ -188,7 +188,7 @@ public class Week {
                 else {
                     console.println("There isn't enough food in the fridge for Froilanda's breakfast. She starves to death");
                 }
-                
+
             }
         }
 
