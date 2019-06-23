@@ -7,9 +7,8 @@ public class Field {
     private static Field INSTANCE = new Field();
 
     private ArrayList<CropRow> cropRows;
-    private int size;
 
-    public Field() {
+    private Field() {
         cropRows.add(new CropRow<CornStalk>());
         cropRows.add(new CropRow<TomatoPlant>());
         cropRows.add(new CropRow<PotatoPlant>());
@@ -17,13 +16,11 @@ public class Field {
         cropRows.add(new CropRow<OkraPlant>());
     }
 
-
     public ArrayList<CropRow> getCropRows() {
         return cropRows;
     }
-    
+
     public static Field getINSTANCE() {
         return INSTANCE;
     }
-
 }
