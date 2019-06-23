@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 public class PotatoPlant extends Crop {
 
+
     public Edible yield() {
         if (this.getReadyForHarvest()) {
             this.setHasBeenFertilized(false);

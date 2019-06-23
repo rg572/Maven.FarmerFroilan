@@ -21,10 +21,11 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
 
     }
 
-    public Edible getNext(Class clazz){
+    public Edible getNext(Class clazz) {
+
         //if()
         return null;
 
-
     }
+
 }
