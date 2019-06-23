@@ -179,8 +179,6 @@ public class Week {
 
                 if(farm.getHouse().getFridge().contains(Edible.EARCORN, 3)){
                     farm.getHouse().getFridge().remove(Edible.EARCORN, 3);
-
-                    console.println(feeder.getName() + " feeds " + horse.getName() + " 3 ears of corn");
                 }
                 else{
                     stable.remove(horse);
