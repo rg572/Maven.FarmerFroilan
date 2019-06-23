@@ -7,12 +7,6 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
 
     private ArrayList<T> food = new ArrayList<>();
 
-    public void cleanUp() {
-    }
-
-    public Integer find(T t) {
-        return null;
-    }
 
     public void remove(T t) {
         food.remove(t);
@@ -20,7 +14,7 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
 
     public void remove(T t, Integer number){
         for(int i = 0; i < number; i++){
-            food.remove(t);
+            remove(t);
         }
     }
 
