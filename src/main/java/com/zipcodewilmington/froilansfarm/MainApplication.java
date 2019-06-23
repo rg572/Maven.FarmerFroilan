@@ -12,10 +12,12 @@ public class MainApplication {
         if (!begin.equalsIgnoreCase("yes")) {
             String start = console.getStringInput("Type 'start' to begin when ready");
             while (!start.equalsIgnoreCase("start")) {
+                if (start.equals("quit")) return;
                 start = console.getStringInput("Waiting to start...");
             }
         }
-
+        Farm farm = new Farm();
+        Week newWeek = new Week(farm, console);
     }
 
 

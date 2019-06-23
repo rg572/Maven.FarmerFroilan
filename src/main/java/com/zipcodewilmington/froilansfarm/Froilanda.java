@@ -1,6 +1,14 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Froilanda implements Farmer, Pilot {
+    public static Froilanda getInstance() {
+        return Instance;
+    }
+
+    private final static Froilanda Instance= new Froilanda();
+
+    private Froilanda() {
+    }
 
     public void eat(Edible edible) {
 
