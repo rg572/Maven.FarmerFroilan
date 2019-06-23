@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
-public  final class FarmHouse  extends House {
+public class FarmHouse extends House {
+
     public static FarmHouse getInstance() {
         return Instance;
     }
