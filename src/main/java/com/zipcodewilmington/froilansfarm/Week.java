@@ -89,7 +89,7 @@ public class Week {
     private void printDay() {
         console.println(String.format("On %s: ", currentDay.toString()));
     }
-    
+
     public void runSunday() {
         currentDay = Day.SUNDAY;
         printDay();
