@@ -69,7 +69,7 @@ public class Week {
         delay(100L);
         console.println("All the animals escape into the wilderness, trampling the fields.");
         console.println("Froilanda leaves with them, riding a horse at the head of the stampede.");
-        delay(20L);
+        delay(100L);
         console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
         console.println("Froilan sits laughing surrounded by the burning farm.");
         console.println("The end.");
