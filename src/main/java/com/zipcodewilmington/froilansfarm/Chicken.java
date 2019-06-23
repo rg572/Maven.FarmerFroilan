@@ -24,4 +24,14 @@ public class Chicken extends Animal implements Produce {
     public void setName(String name){
         this.name=name;
     }
+
+    @Override
+    public String makeNoise() {
+        return "Bawk";
+    }
+
+    @Override
+    public String eat(Edible edible) {
+        return "peckpeckpeck";
+    }
 }

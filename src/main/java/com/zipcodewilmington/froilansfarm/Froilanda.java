@@ -6,26 +6,33 @@ public class Froilanda extends Person implements Farmer, Pilot {
     }
 
     private final static Froilanda Instance= new Froilanda();
-    private String name = "Foilanda";
+
 
     private Froilanda() {
     }
 
-    public void eat(Edible edible) {
-
+    @Override
+    public String makeNoise() {
+        return "I'm sick of this shit.";
     }
 
-    public void mount(Rideable rideable) {
+    public String eat(Edible edible) {
+        return "munch";
+    }
+
+    public String mount(Rideable rideable) {
         rideable.setRider(Froilanda.getInstance());
+        return String.format("Froilanda gets on the %s", rideable.getName());
     }
 
-    public void dismount(Rideable rideable) {
+    public String dismount(Rideable rideable) {
         rideable.removeRider();
+        return String.format("Froilanda gets off the %s", rideable.getName());
     }
 
     @Override
     public String getName() {
-        return name;
+        return "Froilanda";
     }
 
     public void plant(Crop crop) {

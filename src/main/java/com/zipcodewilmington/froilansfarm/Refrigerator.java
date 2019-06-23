@@ -47,9 +47,7 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
 
 
     public Edible getNext(Edible edible){
-
         return null;
-
     }
 
 }

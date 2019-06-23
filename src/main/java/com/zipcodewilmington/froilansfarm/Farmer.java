@@ -2,9 +2,9 @@ package com.zipcodewilmington.froilansfarm;
 
 public interface Farmer extends Rider, Botanist, Eater {
 
-    public void eat(Edible edible);
+    public String eat(Edible edible);
 
-    public void mount(Rideable rideable);
+    public String mount(Rideable rideable);
 
-    public void dismount(Rideable rideable);
+    public String dismount(Rideable rideable);
 }
