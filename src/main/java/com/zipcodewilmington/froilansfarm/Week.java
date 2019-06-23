@@ -92,6 +92,7 @@ public class Week {
     public void runSaturday() {
 
         currentDay = Day.SATURDAY;
+
         console.println("Everybody Dance! It is Saturday!");
         console.println("Smells like teen spirit song started");
         console.println("Froilan took off his hat, and jacket and followed his inner feelings to move");
