@@ -6,6 +6,7 @@ public class Froilanda extends Person implements Farmer, Pilot {
     }
 
     private final static Froilanda Instance= new Froilanda();
+    private String name = "Foilanda";
 
     private Froilanda() {
     }
@@ -20,6 +21,11 @@ public class Froilanda extends Person implements Farmer, Pilot {
 
     public void dismount(Rideable rideable) {
 
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     public void plant(Crop crop) {
