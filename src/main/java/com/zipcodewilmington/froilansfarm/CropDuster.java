@@ -15,7 +15,7 @@ public final class CropDuster extends Aircraft implements FarmVehicle{
         this.rider = null;
     }
 
-    private CropDuster() {
+    protected CropDuster() {
     }
 
     public void operate() {
