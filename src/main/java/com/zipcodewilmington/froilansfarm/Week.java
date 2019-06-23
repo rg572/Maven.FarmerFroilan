@@ -104,7 +104,16 @@ public class Week {
         Person feeder;
         if(currentDay.ordinal()%2 == 0){
             rider = Froilan.getInstance();
+            feeder = Froilanda.getInstance();
         }
+        else{
+            rider = Froilanda.getInstance();
+            feeder = Froilan.getInstance();
+        }
+
+        // rider
+
+
     }
 
 }

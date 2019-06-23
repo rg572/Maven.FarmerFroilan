@@ -42,10 +42,10 @@ public class Farm {
         for(int i = 0; i < 3; i++){
             stables.add(new Stable());
             for(int j = 0; j < 3; j++){
-                stables.get(i).add(new Horse());
+                stables.get(i).add(new Horse((i)*3 + j + 1));
             }
         }
-        stables.get(0).add(new Horse());
+        stables.get(0).add(new Horse(10));
 
         // set up coops
         for(int i = 0; i < 4; i++){
