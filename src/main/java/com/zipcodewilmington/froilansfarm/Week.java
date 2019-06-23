@@ -3,20 +3,19 @@ package com.zipcodewilmington.froilansfarm;
 public class Week {
 
     private Day currentDay;
-
     private Farm farm;
     private Console console;
 
     public Week(Farm farm, Console console) {
         this.farm = farm;
         this.console = console;
-        runWeek();
+        currentDay = null;
     }
 
     private void runWeek() {
         runSunday();
         String input = console.getStringInput("At any time, type 'quit' to exit");
-        while (!input.equalsIgnoreCase("quit")) {
+        while (true) {
             toNextDay();
 
         }
