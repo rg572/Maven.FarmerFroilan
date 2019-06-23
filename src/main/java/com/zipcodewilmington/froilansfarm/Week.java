@@ -125,8 +125,19 @@ public class Week {
 
     }
     public void runSaturday() {
+
         currentDay = Day.SATURDAY;
         runMorning();
+
+
+        console.println("Everybody Dance! It is Saturday!");
+        console.println("Smells like teen spirit song started");
+        console.println("Froilan took off his hat, and jacket and followed his inner feelings to move");
+        console.println("Froilanda joined him with happy smile on her face ");
+        console.println("Horses and chickens made circle around them and danced till the very late night ");
+        console.println("It was really cool dancing party. Weird but cool");
+
+
     }
 
     public void runMorning(){
