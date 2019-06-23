@@ -1,22 +1,24 @@
 package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Field {
 
     private static Field INSTANCE = new Field();
 
-    private ArrayList<CropRow> cropRows;
+    private HashMap<String, CropRow> cropRows;
 
     private Field() {
-        cropRows.add(new CropRow<CornStalk>());
-        cropRows.add(new CropRow<TomatoPlant>());
-        cropRows.add(new CropRow<PotatoPlant>());
-        cropRows.add(new CropRow<SoyPlant>());
-        cropRows.add(new CropRow<OkraPlant>());
+        cropRows = new HashMap<String, CropRow>(5);
+        cropRows.put("corn", new CropRow<CornStalk>());
+        cropRows.put("tomato", new CropRow<TomatoPlant>());
+        cropRows.put("potato", new CropRow<PotatoPlant>());
+        cropRows.put("soy", new CropRow<SoyPlant>());
+        cropRows.put("okra", new CropRow<OkraPlant>());
     }
 
-    public ArrayList<CropRow> getCropRows() {
+    public HashMap<String, CropRow> getCropRows() {
         return cropRows;
     }
 
