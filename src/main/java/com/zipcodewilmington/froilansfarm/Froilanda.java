@@ -34,6 +34,5 @@ public class Froilanda extends Person implements Farmer, Pilot {
 
     @Override
     public void flyAircraft() {
-
     }
 }
