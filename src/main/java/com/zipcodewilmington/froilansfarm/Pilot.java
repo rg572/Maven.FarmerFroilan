@@ -1,5 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
 public interface Pilot {
-    public void flyAircraft();
+    public String flyAircraft(Aircraft aircraft);
 }

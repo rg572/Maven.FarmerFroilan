@@ -36,7 +36,7 @@ public class Froilanda extends Person implements Farmer, Pilot {
     }
 
     public void plant(Crop crop) {
-        Field.getINSTANCE().getCropRows().get(crop.getName()).addCrop(crop);
+        Field.getINSTANCE().getMap().get(crop.getName()).addCrop(crop);
     }
 
     public void plantMany(Crop crop, int howMany) {
@@ -52,6 +52,7 @@ public class Froilanda extends Person implements Farmer, Pilot {
     }
 
     @Override
-    public void flyAircraft() {
+    public String flyAircraft(Aircraft aircraft) {
+        return String.format("Froilanda starts the %s to set off", aircraft.getName());
     }
 }

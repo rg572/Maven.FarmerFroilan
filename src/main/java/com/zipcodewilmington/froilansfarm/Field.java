@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Field {
@@ -18,11 +19,15 @@ public class Field {
         cropRows.put("okra", new CropRow<OkraPlant>());
     }
 
-    public HashMap<String, CropRow> getCropRows() {
-        return cropRows;
+    public Collection<CropRow> getCropRows() {
+        return cropRows.values();
     }
 
     public static Field getINSTANCE() {
         return INSTANCE;
+    }
+
+    public HashMap<String, CropRow> getMap() {
+        return cropRows;
     }
 }

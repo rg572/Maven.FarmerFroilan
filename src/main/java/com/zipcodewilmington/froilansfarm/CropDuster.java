@@ -1,5 +1,9 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+
 public final class CropDuster extends Aircraft implements FarmVehicle{
 
     private static final CropDuster INSTANCE = new CropDuster();
@@ -20,17 +24,24 @@ public final class CropDuster extends Aircraft implements FarmVehicle{
 
     public void operate() {
     }
+    
+     public void fertilize(){
+        Collection<CropRow> cropRows = Field.getINSTANCE().getCropRows();
+        for (CropRow cropRow : cropRows) {
+            ArrayList<Crop> cr = cropRow.getCropRow();
+            for (Crop crop : cr) crop.hasBeenFertilized = true;
+        }
+     }
 
-    public void fertilize(){
-    }
 
     public String makeNoise() {
         return "PshhhPshhhPshhh";
     }
 
-    public void fly() {
-
+    public String fly() {
+        return "Setting off into the air";
     }
+
     public static CropDuster getINSTANCE() {
         return INSTANCE;
     }
