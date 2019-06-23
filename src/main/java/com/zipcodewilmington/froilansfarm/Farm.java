@@ -17,7 +17,7 @@ public class Farm {
     }
 
     protected void setUpFarm(){
-        // setup field
+        // set up field
         field = new Field();
         field.plantRow(new CropRow<CornStalk>());
         field.plantRow(new CropRow<TomatoPlant>());
@@ -26,7 +26,7 @@ public class Farm {
         field.plantRow(new CropRow<PotatoPlant>());
         field.plantRow(new CropRow<SoyPlant>());
 
-        // setup farmhouse
+        // set up farmhouse
         house = FarmHouse.getInstance();
         for(int i = 0; i < 1000; i++){
             house.getFridge().add(new EarCorn());
@@ -36,6 +36,14 @@ public class Farm {
             house.getFridge().add(new Okra());
             house.getFridge().add(new Potato());
             house.getFridge().add(new Tomato());
+        }
+
+        // set up stables
+        for(int i = 0; i < 3; i++){
+            Stable stable = new Stable();
+            for(int j = 0; j < 3; j++){
+                stable.add(new Horse());
+            }
         }
     }
 
