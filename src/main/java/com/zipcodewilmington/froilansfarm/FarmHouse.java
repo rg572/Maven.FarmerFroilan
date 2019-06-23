@@ -18,7 +18,7 @@ public class FarmHouse extends House {
 
     private FarmHouse() {
         fridge = new Refrigerator<Edible>();
-        //tractor =  Tractor.getINSTANCE();
+        tractor = Tractor.getINSTANCE();
         cropDuster = CropDuster.getINSTANCE();
         combineHarvester = new CombineHarvester();
     }
