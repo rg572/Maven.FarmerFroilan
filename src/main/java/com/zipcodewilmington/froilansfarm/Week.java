@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm;
 public class Week {
 
     private Day currentDay;
+
     private Farm farm;
     private Console console;
 
@@ -14,13 +15,55 @@ public class Week {
 
     private void runWeek() {
         runSunday();
-        String beginNextDay = console.getStringInput("Enter 'Wake up' to begin next day");
-        while (!beginNextDay.equalsIgnoreCase("wake up")) {
-            if (beginNextDay.equals("quit")) break;
-            beginNextDay = console.getStringInput("Don't you want to start the new day?");
+        String input = console.getStringInput("At any time, type 'quit' to exit");
+        while (!input.equalsIgnoreCase("quit")) {
+            toNextDay();
+
         }
     }
 
+    private void toNextDay() {
+        String input = console.getStringInput("Enter 'Wake up' to begin next day");
+        while (!input.equalsIgnoreCase("quit") | input.equalsIgnoreCase("wake up")) {
+            input = console.getStringInput("Don't you want to start the new day?");
+        }
+        switch (currentDay) {
+            case SUNDAY:
+                runMonday();
+                break;
+            case MONDAY:
+                runTuesday();
+                break;
+            case TUESDAY:
+                runWednesday();
+                break;
+            case WEDNESDAY:
+                runThursday();
+                break;
+            case THURSDAY:
+                runFriday();
+                break;
+            case FRIDAY:
+                runSaturday();
+                break;
+            case SATURDAY:
+                runBurnItDown();
+                break;
+            default:
+                runSunday();
+                break;
+        }
+
+    }
+
+    private void runBurnItDown() {
+        console.println("Froilan and Froilanda, after a week of magical gmo produce, have gone psychotic and decide to burn it all down.");
+        console.println("All the animals escape into the wilderness, trampling the fields.");
+        console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
+        console.println("Froilanda takes this chance to leave the farm life forever.");
+        console.println("Froilan sits laughing surrounded by the burning farm.");
+        console.println("The end.");
+    }
 
     public void runSunday() {
         currentDay = Day.SUNDAY;
