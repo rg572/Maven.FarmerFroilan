@@ -17,6 +17,7 @@ public class Week {
     protected void runWeek() {
         runSunday();
         String input = console.getStringInput("At any time, type 'quit' to exit");
+        if (input.equals("quit")) weekOver = true;
         while (!weekOver) {
             toNextDay();
         }
