@@ -150,10 +150,45 @@ public class Week {
         for(Stable stable : farm.getStables()){
             for(Horse horse : stable.getHorses()){
                 rider.mount(horse);
-                console.println(rider.getName() + "is riding" + horse.getName());
+                console.println(rider.getName() + " is riding " + horse.getName());
                 rider.dismount(horse);
 
-                //feeder.feed(horse);
+                if(farm.getHouse().getFridge().contains(Edible.EARCORN, 3)){
+                    farm.getHouse().getFridge().remove(Edible.EARCORN, 3);
+
+                    console.println(feeder.getName() + " feeds " + horse.getName() + " 3 ears of corn");
+                }
+                else{
+                    stable.remove(horse);
+                    console.println("There's not enough corn in the fridge. " + horse.getName() + " starves to death.");
+                }
+
+                if(farm.getHouse().getFridge().contains(Edible.EARCORN, 1) &&
+                        farm.getHouse().getFridge().contains(Edible.TOMATO, 2) &&
+                        farm.getHouse().getFridge().contains(Edible.EGG, 5)){
+
+                    farm.getHouse().getFridge().remove(Edible.EARCORN);
+                    farm.getHouse().getFridge().remove(Edible.TOMATO, 2);
+                    farm.getHouse().getFridge().remove(Edible.EGG, 5);
+                    console.println("Froilan eats 1 ear of corn, 2 tomatoes, and 5 eggs for breakfast");
+                }
+                else {
+                    console.println("There isn't enough food in the fridge for Froilan's breakfast. He starves to death");
+                }
+
+                if(farm.getHouse().getFridge().contains(Edible.EARCORN, 2) &&
+                        farm.getHouse().getFridge().contains(Edible.TOMATO, 1) &&
+                        farm.getHouse().getFridge().contains(Edible.EGG, 2)){
+
+                    farm.getHouse().getFridge().remove(Edible.EARCORN, 2);
+                    farm.getHouse().getFridge().remove(Edible.TOMATO);
+                    farm.getHouse().getFridge().remove(Edible.EGG, 2);
+                    console.println("Froilanda eats 2 ears of corn, 1 tomato, and 2 eggs for breakfast");
+                }
+                else {
+                    console.println("There isn't enough food in the fridge for Froilanda's breakfast. She starves to death");
+                }
+                
             }
         }
 
