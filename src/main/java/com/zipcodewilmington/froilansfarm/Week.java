@@ -92,4 +92,12 @@ public class Week {
         currentDay = Day.SATURDAY;
     }
 
+    public void runMorning(Day currentDay){
+        Person rider;
+        Person feeder;
+        if(currentDay.ordinal()%2 == 0){
+            rider = Froilan.getInstance();
+        }
+    }
+
 }
