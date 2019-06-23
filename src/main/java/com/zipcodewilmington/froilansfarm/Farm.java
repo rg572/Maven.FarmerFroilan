@@ -46,15 +46,14 @@ public class Farm {
 
         // set up coops
         coops = new ArrayList<ChickenCoop>();
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 3; i++){
             coops.add(new ChickenCoop());
             for(int j=0; j < 3; j++){
-                coops.get(i).add(new Chicken());
+                coops.get(i).add(new Chicken( (i)*3+j+1));
             }
         }
-        for(int i= 0; i < 3; i++){
-            coops.get(i).add(new Chicken());
-        }
+        coops.get(2).add(new Chicken(10));
+
     }
 
 
