@@ -3,28 +3,32 @@ package com.zipcodewilmington.froilansfarm;
 public class Week {
 
     private Day currentDay;
-
     private Farm farm;
     private Console console;
+    private Boolean weekOver;
 
     public Week(Farm farm, Console console) {
         this.farm = farm;
         this.console = console;
-        runWeek();
+        currentDay = null;
+        weekOver = false;
     }
 
-    private void runWeek() {
+    protected void runWeek() {
         runSunday();
         String input = console.getStringInput("At any time, type 'quit' to exit");
-        while (!input.equalsIgnoreCase("quit")) {
+        while (!weekOver) {
             toNextDay();
-
         }
     }
 
-    private void toNextDay() {
+    protected void toNextDay() {
         String input = console.getStringInput("Enter 'Wake up' to begin next day");
-        while (!input.equalsIgnoreCase("quit") | input.equalsIgnoreCase("wake up")) {
+        while (!input.equalsIgnoreCase("wake up")) {
+            if (input.equals("quit")) {
+                weekOver = true;
+                return;
+            }
             input = console.getStringInput("Don't you want to start the new day?");
         }
         switch (currentDay) {
@@ -63,10 +67,12 @@ public class Week {
         console.println("Froilanda takes this chance to leave the farm life forever.");
         console.println("Froilan sits laughing surrounded by the burning farm.");
         console.println("The end.");
+        weekOver = true;
     }
 
     public void runSunday() {
         currentDay = Day.SUNDAY;
+
 
     }
     public void runMonday() {

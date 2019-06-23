@@ -12,6 +12,10 @@ public enum Day {
 
     private Integer dayInt;
 
+    public Integer getDayInt() {
+        return dayInt;
+    }
+
     Day(Integer dayInt) {
         this.dayInt = dayInt;
     }
