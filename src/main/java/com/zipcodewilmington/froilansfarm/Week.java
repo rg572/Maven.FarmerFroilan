@@ -8,18 +8,20 @@ public class Week {
     private Farm farm;
     private Console console;
     private Boolean weekOver;
+    private Boolean pause;
 
     public Week(Farm farm, Console console) {
         this.farm = farm;
         this.console = console;
         currentDay = null;
         weekOver = false;
+        pause = false;
     }
 
     protected void runWeek() {
+        delay(50L);
+        console.println("At any time, type 'quit' to exit");
         runSunday();
-        String input = console.getStringInput("At any time, type 'quit' to exit");
-        if (input.equals("quit")) weekOver = true;
         while (!weekOver) {
             toNextDay();
         }
@@ -34,7 +36,6 @@ public class Week {
             }
             input = console.getStringInput("Don't you want to start the new day?");
         }
-        console.println(String.format("On %s: ", currentDay.toString()));
 
         switch (currentDay) {
             case SUNDAY:
@@ -59,7 +60,7 @@ public class Week {
                 runBurnItDown();
                 break;
             default:
-                runSunday();
+                runBurnItDown();
                 break;
         }
 
@@ -67,10 +68,10 @@ public class Week {
 
     private void runBurnItDown() {
         console.println("Froilan and Froilanda, after a week of magical produce, have gone psychotic and decide to burn it all down.");
-        delay(300L);
+        delay(100L);
         console.println("All the animals escape into the wilderness, trampling the fields.");
         console.println("Froilanda leaves with them, riding a horse at the head of the stampede.");
-        delay(500L);
+        delay(20L);
         console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
         console.println("Froilan sits laughing surrounded by the burning farm.");
         console.println("The end.");
@@ -78,19 +79,20 @@ public class Week {
     }
 
     protected void delay(long delayBy) {
+        pause = true;
         long currentTime = System.currentTimeMillis();
         long goalTime = currentTime + delayBy;
         while (System.currentTimeMillis() != goalTime) {
             continue;
         }
+        pause = false;
     }
 
     public void runSunday() {
         currentDay = Day.SUNDAY;
-        runMorning();
-        delay(2000L);
+        console.println("Today it's Sunday.");
+        //runMorning();
         console.println("In the afternoon: ");
-        delay(100L);
         Froilan.getInstance().plantMany(new PotatoPlant(), 30);
         Froilan.getInstance().plantMany(new TomatoPlant(), 10);
         Froilan.getInstance().plantMany(new CornStalk(), 200);
@@ -111,9 +113,7 @@ public class Week {
     public void runWednesday() {
         currentDay = Day.WEDNESDAY;
         runMorning();
-        delay(500L);
         console.println("In the afternoon: ");
-        delay(100L);
         Froilanda.getInstance().plantMany(new PotatoPlant(), 60);
         Froilanda.getInstance().plantMany(new SoyPlant(), 70);
         Froilanda.getInstance().plantMany(new CornStalk(), 250);
