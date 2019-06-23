@@ -20,11 +20,12 @@ public final class CropDuster extends Aircraft implements FarmVehicle{
     }
 
     protected CropDuster() {
+        rider = null;
     }
 
     public void operate() {
     }
-    
+
      public void fertilize(){
         Collection<CropRow> cropRows = Field.getINSTANCE().getCropRows();
         for (CropRow cropRow : cropRows) {

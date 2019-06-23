@@ -21,6 +21,11 @@ public final class Console {
     }
 
     public void println(String val, Object... vals) {
+        long currentTime = System.currentTimeMillis();
+        long goalTime = currentTime + 150;
+        while (System.currentTimeMillis() != goalTime) {
+            continue;
+        }
         print(val + "\n", vals);
     }
 
