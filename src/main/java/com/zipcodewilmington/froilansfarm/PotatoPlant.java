@@ -10,4 +10,9 @@ public class PotatoPlant extends Crop {
             return Edible.POTATO;
         } else {return null;}
     }
+
+    @Override
+    public String getName() {
+        return "potato";
+    }
 }

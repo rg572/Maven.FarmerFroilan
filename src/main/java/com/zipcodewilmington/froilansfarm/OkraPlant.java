@@ -10,4 +10,9 @@ public class OkraPlant extends Crop {
                 return Edible.OKRA;
             } else {return null;}
         }
+
+    @Override
+    public String getName() {
+        return "okra";
     }
+}

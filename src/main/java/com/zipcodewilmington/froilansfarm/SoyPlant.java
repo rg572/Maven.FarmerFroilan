@@ -9,4 +9,9 @@ public class SoyPlant extends Crop {
             return Edible.EDAMAME;
         } else {return null;}
     }
+
+    @Override
+    public String getName() {
+        return "soy";
+    }
 }

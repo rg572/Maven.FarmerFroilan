@@ -1,9 +1,13 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Chicken extends Animal implements Produce {
+import static com.zipcodewilmington.froilansfarm.Edible.EGG;
 
+public class Chicken extends Animal implements Produce {
+    private Boolean hasBeenFertilized = false;
 
     public Edible yield() {
-        return null;
+        if (!hasBeenFertilized){
+            return EGG;
+        }return null;
     }
 }

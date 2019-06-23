@@ -91,11 +91,15 @@ public class Week {
         delay(2000L);
         console.println("In the afternoon: ");
         delay(100L);
-        console.println("Froilan plants potatoes, soy plants, and some corn stalks");
+        Froilan.getInstance().plantMany(new PotatoPlant(), 30);
+        Froilan.getInstance().plantMany(new TomatoPlant(), 10);
+        Froilan.getInstance().plantMany(new CornStalk(), 200);
+        console.println("Froilan plants 30 potatoes, 10 tomato plants, and 200 corn stalks");
     }
 
     public void runMonday() {
         currentDay = Day.MONDAY;
+
         runMorning();
 
     }
@@ -107,6 +111,16 @@ public class Week {
     public void runWednesday() {
         currentDay = Day.WEDNESDAY;
         runMorning();
+        delay(500L);
+        console.println("In the afternoon: ");
+        delay(100L);
+        Froilanda.getInstance().plantMany(new PotatoPlant(), 60);
+        Froilanda.getInstance().plantMany(new SoyPlant(), 70);
+        Froilanda.getInstance().plantMany(new CornStalk(), 250);
+        Froilan.getInstance().plantMany(new OkraPlant(), 50);
+        Froilan.getInstance().plantMany(new TomatoPlant(), 80);
+        console.println("Froilanda plants 60 potatoes, 70 soy plants, and 250 corn stalks");
+        console.println("Froilan plants 50 okra plants, and 80 tomato plants");
     }
 
     public void runThursday() {
@@ -124,14 +138,12 @@ public class Week {
         currentDay = Day.SATURDAY;
         runMorning();
 
-
         console.println("Everybody Dance! It is Saturday!");
         console.println("Smells like teen spirit song started");
         console.println("Froilan took off his hat, and jacket and followed his inner feelings to move");
         console.println("Froilanda joined him with happy smile on her face ");
         console.println("Horses and chickens made circle around them and danced till the very late night ");
         console.println("It was really cool dancing party. Weird but cool");
-
 
     }
 

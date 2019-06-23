@@ -1,9 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Froilan extends Person implements Farmer{
+public class Froilan extends Person implements Farmer {
     private static Froilan ourInstance = new Froilan();
     private String name = "Froilan";
-
 
 
     public static Froilan getInstance() {
@@ -32,5 +31,18 @@ public class Froilan extends Person implements Farmer{
 
 
     public void plant(Crop crop) {
+        Field.getINSTANCE().getCropRows().get(crop.getName()).addCrop(crop);
+    }
+
+    public void plantMany(Crop crop, int howMany) {
+        for (int i = 0; i < howMany; i++) {
+            try {
+                plant(crop.getClass().newInstance());
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

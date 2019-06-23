@@ -9,4 +9,9 @@ public class CornStalk extends Crop {
             this.setReadyForHarvest(false);
             return Edible.EARCORN; } else {return null;}
     }
+
+    @Override
+    public String getName() {
+        return "corn";
+    }
 }

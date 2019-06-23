@@ -9,4 +9,9 @@ public class TomatoPlant extends Crop {
             return Edible.TOMATO;
         } return null;
     }
+
+    @Override
+    public String getName() {
+        return "tomato";
+    }
 }
