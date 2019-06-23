@@ -8,7 +8,7 @@ public final class Tractor extends Vehicle implements FarmVehicle {
 
     private static final Tractor INSTANCE = new Tractor();
 
-    private Tractor() {
+    protected Tractor() {
     }
 
     public void harvest(Crop crop){
