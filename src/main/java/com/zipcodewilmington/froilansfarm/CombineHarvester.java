@@ -20,6 +20,6 @@ public final class CombineHarvester extends Vehicle implements FarmVehicle {
 
     @Override
     public String getName() {
-        return null;
+        return "Combine Harvester";
     }
 }
