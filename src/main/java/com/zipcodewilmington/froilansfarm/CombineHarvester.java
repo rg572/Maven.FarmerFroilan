@@ -1,6 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class CombineHarvester extends Vehicle implements FarmVehicle {
+public final class CombineHarvester extends Vehicle implements FarmVehicle {
+    private static final CombineHarvester INSTANCE = new CombineHarvester();
+
+    public CombineHarvester() {
+    }
 
     public void operate() {
 
@@ -10,7 +14,7 @@ public class CombineHarvester extends Vehicle implements FarmVehicle {
         return "Whirrrr.....";
     }
 
-    public void harvest(Field field) {
+    public void harvest() {
 
     }
 

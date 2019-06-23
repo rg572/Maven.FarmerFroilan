@@ -1,6 +1,11 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Tractor extends Vehicle implements FarmVehicle {
+public final class Tractor extends Vehicle implements FarmVehicle {
+
+    private static final Tractor INSTANCE = new Tractor();
+
+    private Tractor() {
+    }
 
     public void harvest(Crop crop){
 
