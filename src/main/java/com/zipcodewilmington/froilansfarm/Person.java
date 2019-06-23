@@ -8,4 +8,6 @@ public class Person  extends Animal implements NoiseMaker, Eater{
     public void eat(Edible edible) {
 
     }
+
+
 }
