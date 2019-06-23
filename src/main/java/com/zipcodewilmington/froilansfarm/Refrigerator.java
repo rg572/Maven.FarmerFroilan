@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public  class Refrigerator<T extends Edible> extends Storage<T> {
 
@@ -29,13 +30,12 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
     }
 
     public Boolean contains(T edible, Integer number){
-        if(food.size() == 0) { return false;}
-        Integer index = 0;
+        List<T> list = food;
         for(int i = 0; i < number; i++){
-            if(index > food.size() - 1 || !food.subList(index, food.size()-1).contains(edible)){
+            if(list.size() == 0 || !list.contains(edible)){
                 return false;
             }
-            index = food.subList(index, food.size()-1).indexOf(edible) + 1;
+            list = list.subList(1, list.size()-1);
         }
         return true;
     }
