@@ -86,11 +86,15 @@ public class Week {
         pause = false;
     }
 
+    private void printDay() {
+        console.println(String.format("On %s: ", currentDay.toString()));
+    }
+    
     public void runSunday() {
         currentDay = Day.SUNDAY;
         printDay();
         runMorning();
-        delay(2000);
+        delay(1000);
         console.println("In the afternoon: ");
         Froilan.getInstance().plantMany(new PotatoPlant(), 30);
         Froilan.getInstance().plantMany(new TomatoPlant(), 10);
@@ -98,11 +102,9 @@ public class Week {
         console.println("Froilan plants 30 potatoes, 10 tomato plants, and 200 corn stalks");
         console.println("Froilanda gets engine oil for her crop duster.");
         console.println("They go to bed with the sun.");
+        delay(500);
     }
 
-    private void printDay() {
-        console.println(String.format("On %s: ", currentDay.toString()));
-    }
 
     public void runMonday() {
         currentDay = Day.MONDAY;
