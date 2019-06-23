@@ -91,7 +91,8 @@ public class Week {
         delay(2000L);
         console.println("In the afternoon: ");
         delay(100L);
-        console.println("Froilan plants potatoes, soy plants, and some corn stalks");
+        Froilan.getInstance().plantMany(new PotatoPlant(), 10);
+        console.println("Froilan plants potatoes, soy plants, and corn stalks");
     }
 
     public void runMonday() {

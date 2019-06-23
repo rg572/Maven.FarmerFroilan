@@ -10,4 +10,9 @@ public class SoyPlant extends Crop {
             return edamame;
         } else {return null;}
     }
+
+    @Override
+    public String getName() {
+        return "soy";
+    }
 }

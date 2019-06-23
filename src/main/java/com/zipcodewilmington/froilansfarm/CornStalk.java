@@ -9,4 +9,9 @@ public class CornStalk extends Crop {
             this.setReadyForHarvest(false);
             return earCorn; } else {return null;}
     }
+
+    @Override
+    public String getName() {
+        return "corn";
+    }
 }

@@ -32,5 +32,9 @@ public class Froilan extends Person implements Farmer{
 
 
     public void plant(Crop crop) {
+        Field.getINSTANCE().getCropRows().get(crop.getName()).addCrop(crop);
+    }
+    public void plantMany(Crop crop, int howMany) {
+        for (int i = 0; i < howMany; i++) plant(crop);
     }
 }

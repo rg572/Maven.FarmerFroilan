@@ -29,7 +29,11 @@ public class Froilanda extends Person implements Farmer, Pilot {
     }
 
     public void plant(Crop crop) {
+        Field.getINSTANCE().getCropRows().get(crop.getName()).addCrop(crop);
+    }
 
+    public void plantMany(Crop crop, int howMany) {
+        for (int i = 0; i < howMany; i++) plant(crop);
     }
 
     @Override

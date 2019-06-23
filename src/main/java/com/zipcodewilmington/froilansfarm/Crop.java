@@ -18,4 +18,6 @@ public abstract class Crop implements Produce{
         this.readyForHarvest = hasBeenHarvested;
     }
 
+    public abstract String getName();
+
 }
