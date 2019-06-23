@@ -9,12 +9,9 @@ public class ChickenCoop extends AnimalStorage<Chicken>{
         return null;
     }
 
-    @Override
     void remove(Chicken chicken) {
-
     }
 
-    @Override
     void add(Chicken chicken) {
 
     }

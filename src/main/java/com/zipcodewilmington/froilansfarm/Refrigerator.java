@@ -1,18 +1,29 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.ArrayList;
+
 public  class Refrigerator<T extends Edible> extends Storage<T> {
 
-    void cleanUp() {
+    ArrayList<T> food = new ArrayList<>();
+
+    public void cleanUp() {
     }
 
-    Integer find(T t) {
+    public Integer find(T t) {
         return null;
     }
 
-    void remove(T t) {
+    public void remove(T t) {
     }
 
-    void add(T t) {
+    public void add(T t) {
+        food.add(t);
 
+    }
+
+    public Edible getNext(Class clazz){
+        if()
+
+        }
     }
 }

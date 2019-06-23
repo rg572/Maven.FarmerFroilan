@@ -1,8 +1,22 @@
 package com.zipcodewilmington.froilansfarm;
 
 public enum Day {
-    MONDAY, TUESDAY, WEDNESDAY,THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+
+    SUNDAY(),
+    MONDAY(),
+    TUESDAY(),
+    WEDNESDAY(),
+    THURSDAY(),
+    FRIDAY(),
+    SATURDAY();
+
 
     Day() {
+    }
+
+    @Override
+    public String toString() {
+        String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        return days[this.ordinal()];
     }
 }
