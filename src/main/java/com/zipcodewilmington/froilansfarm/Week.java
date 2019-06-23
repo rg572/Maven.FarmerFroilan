@@ -165,10 +165,11 @@ public class Week {
             feeder = Froilan.getInstance();
         }
 
+        Integer cornLost = 0;
+        Integer horsesLost = 0;
         for(Stable stable : farm.getStables()){
             for(Horse horse : stable.getHorses()){
                 rider.mount(horse);
-                console.println(rider.getName() + " is riding " + horse.getName());
                 rider.dismount(horse);
 
                 if(farm.getHouse().getFridge().contains(Edible.EARCORN, 3)){
@@ -178,11 +179,13 @@ public class Week {
                 }
                 else{
                     stable.remove(horse);
-                    console.println("There's not enough corn in the fridge. " + horse.getName() + " starves to death.");
+                    horsesLost++;
                 }
 
             }
         }
+        console.println(rider.getName() + " rode all the horses.");
+        console.println(feeder.getName() + " feed " + cornLost + " of corn to the horses. " + horsesLost + " died of starvation");
 
         if(farm.getHouse().getFridge().contains(Edible.EARCORN, 1) &&
                 farm.getHouse().getFridge().contains(Edible.TOMATO, 2) &&
