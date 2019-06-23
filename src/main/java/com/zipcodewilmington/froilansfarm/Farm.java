@@ -20,7 +20,7 @@ public class Farm {
     protected void setUpFarm(){
 
         field = Field.getINSTANCE();
-        
+
         // set up farmhouse
         house = FarmHouse.getInstance();
         for(int i = 0; i < 1000; i++){
