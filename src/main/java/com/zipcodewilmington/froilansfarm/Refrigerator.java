@@ -1,6 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.ArrayList;
+
 public  class Refrigerator<T extends Edible> extends Storage<T> {
+
+    ArrayList<T> food = new ArrayList<>();
 
     public void cleanUp() {
     }
@@ -13,6 +17,13 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
     }
 
     public void add(T t) {
+        food.add(t);
 
+    }
+
+    public Edible getNext(Class clazz){
+        if()
+
+        }
     }
 }
