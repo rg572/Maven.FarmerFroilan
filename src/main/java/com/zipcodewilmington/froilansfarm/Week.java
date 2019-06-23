@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
+import com.sun.xml.internal.xsom.impl.ForeignAttributesImpl;
+
 public class Week {
 
     private Day currentDay;
@@ -32,7 +34,7 @@ public class Week {
             }
             input = console.getStringInput("Don't you want to start the new day?");
         }
-        console.println(String.format("On %s, Froilan and Froilanda: ", currentDay.toString()));
+        console.println(String.format("On %s: ", currentDay.toString()));
 
         switch (currentDay) {
             case SUNDAY:
@@ -65,17 +67,36 @@ public class Week {
 
     private void runBurnItDown() {
         console.println("Froilan and Froilanda, after a week of magical produce, have gone psychotic and decide to burn it all down.");
+        delay(300L);
         console.println("All the animals escape into the wilderness, trampling the fields.");
         console.println("Froilanda leaves with them, riding a horse at the head of the stampede.");
+        delay(500L);
         console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
         console.println("Froilan sits laughing surrounded by the burning farm.");
         console.println("The end.");
         weekOver = true;
     }
 
+    protected void delay(long delayBy) {
+        long currentTime = System.currentTimeMillis();
+        long goalTime = currentTime + delayBy;
+        while (System.currentTimeMillis() != goalTime) {
+            continue;
+        }
+    }
+
     public void runSunday() {
         currentDay = Day.SUNDAY;
         runMorning();
+        delay(2000L);
+        console.println("In the afternoon: ");
+
+        Froilan.getInstance().plant(new PotatoPlant());
+        Froilan.getInstance().plant(new SoyPlant());
+        Froilan.getInstance().plant(new CornStalk());
+        Froilan.getInstance().plant(new OkraPlant());
+        Froilan.getInstance().plant(new TomatoPlant());
+        console.println("Froilan plants a r");
     }
 
     public void runMonday() {
