@@ -21,9 +21,22 @@ public class CornStalkTest {
     public void yieldTest() {
         Crop cornStalk = new CornStalk();
         cornStalk.setHasBeenFertilized(true);
-        cornStalk.setReadyForHarvest(false);
+        cornStalk.setReadyForHarvest(true);
         cornStalk.yield();
-        Assert.assertTrue(cornStalk.getHasBeenFertilized());
+        Assert.assertFalse(cornStalk.getHasBeenFertilized());
         Assert.assertFalse(cornStalk.getReadyForHarvest());
+    }
+
+    @Test
+    public void yieldTest2() {
+        Edible earCorn = null;
+        Crop cornStalk = new CornStalk();
+        cornStalk.setHasBeenFertilized(true);
+        cornStalk.setReadyForHarvest(true);
+        Edible expected = earCorn;
+        Edible actual = cornStalk.yield();
+
+        Assert.assertEquals(earCorn, actual);
+
     }
 }

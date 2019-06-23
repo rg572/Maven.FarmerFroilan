@@ -7,7 +7,6 @@ public class CornStalk extends Crop {
         if (this.getReadyForHarvest()) {
             this.setHasBeenFertilized(false);
             this.setReadyForHarvest(false);
-            return earCorn;
-        } else {return null;}
+            return earCorn; } else {return null;}
     }
 }
