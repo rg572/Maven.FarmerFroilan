@@ -20,4 +20,8 @@ public class Chicken extends Animal implements Produce {
     public String getName(){
         return name;
     }
+
+    public void setName(String name){
+        this.name=name;
+    }
 }
