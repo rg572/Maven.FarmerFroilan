@@ -14,6 +14,13 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
     }
 
     public void remove(T t) {
+        food.remove(t);
+    }
+
+    public void remove(T t, Integer number){
+        for(int i = 0; i < number; i++){
+            food.remove(t);
+        }
     }
 
     public void add(T t) {
@@ -21,9 +28,21 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
 
     }
 
-    public Edible getNext(Class clazz) {
+    public Boolean contains(T edible, Integer number){
 
-        //if()
+        Integer index = 0;
+        for(int i = 0; i < number; i++){
+            if(!food.subList(index, food.size()-1).contains(edible)){
+                return false;
+            }
+            index = food.indexOf(edible);
+        }
+        return true;
+    }
+
+
+    public Edible getNext(Edible edible){
+
         return null;
 
     }
