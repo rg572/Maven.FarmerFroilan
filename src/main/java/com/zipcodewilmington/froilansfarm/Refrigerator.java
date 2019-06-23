@@ -2,17 +2,17 @@ package com.zipcodewilmington.froilansfarm;
 
 public  class Refrigerator<T extends Edible> extends Storage<T> {
 
-    void cleanUp() {
+    public void cleanUp() {
     }
 
-    Integer find(T t) {
+    public Integer find(T t) {
         return null;
     }
 
-    void remove(T t) {
+    public void remove(T t) {
     }
 
-    void add(T t) {
+    public void add(T t) {
 
     }
 }
