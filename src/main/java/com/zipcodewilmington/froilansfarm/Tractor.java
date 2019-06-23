@@ -27,4 +27,14 @@ public final class Tractor extends Vehicle implements FarmVehicle {
     public String getName() {
         return "Tractor";
     }
+
+    @Override
+    public void setRider(Rider rider) {
+
+    }
+
+    @Override
+    public void removeRider() {
+
+    }
 }

@@ -11,4 +11,14 @@ public class Horse extends Animal implements Rideable{
     public String getName(){
         return name;
     }
+
+    @Override
+    public void setRider(Rider rider) {
+
+    }
+
+    @Override
+    public void removeRider() {
+
+    }
 }
