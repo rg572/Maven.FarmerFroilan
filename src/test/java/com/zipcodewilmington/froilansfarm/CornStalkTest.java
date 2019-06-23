@@ -39,4 +39,13 @@ public class CornStalkTest {
         Assert.assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void getName() {
+        Crop cornStalk = new CornStalk();
+        String actual = cornStalk.getName();
+        String expected = "corn";
+
+        Assert.assertEquals(expected, actual);
+    }
 }

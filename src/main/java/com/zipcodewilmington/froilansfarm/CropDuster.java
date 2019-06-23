@@ -19,12 +19,12 @@ public final class CropDuster extends Aircraft implements FarmVehicle{
         this.rider = null;
     }
 
-    private CropDuster() {
+    protected CropDuster() {
     }
 
     public void operate() {
     }
-
+    
      public void fertilize(){
         Collection<CropRow> cropRows = Field.getINSTANCE().getCropRows();
         for (CropRow cropRow : cropRows) {
@@ -32,6 +32,7 @@ public final class CropDuster extends Aircraft implements FarmVehicle{
             for (Crop crop : cr) crop.hasBeenFertilized = true;
         }
      }
+
 
     public String makeNoise() {
         return "PshhhPshhhPshhh";
@@ -44,6 +45,7 @@ public final class CropDuster extends Aircraft implements FarmVehicle{
     public static CropDuster getINSTANCE() {
         return INSTANCE;
     }
+
     @Override
     public String getName() {
         return "crop duster";
