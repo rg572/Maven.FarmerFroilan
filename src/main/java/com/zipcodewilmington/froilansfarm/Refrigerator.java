@@ -45,15 +45,17 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
         return true;
     }
 
-    public Integer getNumberOf(T edible){
+
+    public Integer getNumberOf(T edible) {
         Integer count = 0;
-        for(T t: food){
-            if(t.equals(edible)){
+        for (T t : food) {
+            if (t.equals(edible)) {
                 count++;
             }
         }
         return count;
     }
+
 
 
 }

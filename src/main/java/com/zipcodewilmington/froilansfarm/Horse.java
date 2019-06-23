@@ -21,4 +21,14 @@ public class Horse extends Animal implements Rideable{
     public void removeRider() {
 
     }
+
+    @Override
+    public String makeNoise() {
+        return "Neigh";
+    }
+
+    @Override
+    public String eat(Edible edible) {
+        return "smacksmacksmack";
+    }
 }
