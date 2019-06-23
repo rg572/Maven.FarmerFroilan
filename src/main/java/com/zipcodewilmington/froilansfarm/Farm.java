@@ -40,11 +40,28 @@ public class Farm {
 
         // set up stables
         for(int i = 0; i < 3; i++){
-            Stable stable = new Stable();
+            stables.add(new Stable());
             for(int j = 0; j < 3; j++){
-                stable.add(new Horse());
+                stables.get(i).add(new Horse());
             }
         }
+        stables.get(0).add(new Horse());
+
+        // set up coops
+        for(int i = 0; i < 4; i++){
+            coops.add(new ChickenCoop());
+            for(int j=0; j < 3; j++){
+                coops.get(i).add(new Chicken());
+            }
+        }
+        for(int i= 0; i < 3; i++){
+            coops.get(i).add(new Chicken());
+        }
+    }
+
+
+    public List<Stable> getStables(){
+        return stables;
     }
 
 
