@@ -28,6 +28,5 @@ public class Froilanda implements Farmer, Pilot {
 
     @Override
     public void flyAircraft() {
-
     }
 }
