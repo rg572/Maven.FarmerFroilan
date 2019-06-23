@@ -7,6 +7,7 @@ public abstract class Storage<T> {
     abstract void remove(T t);
     abstract void add(T t);
 
+    abstract Boolean contains(T t);
 
 
 

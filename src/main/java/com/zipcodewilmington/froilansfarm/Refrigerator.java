@@ -15,4 +15,10 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
     void add(T t) {
 
     }
+
+    @Override
+    Boolean contains(T t) {
+        return null;
+    }
+
 }

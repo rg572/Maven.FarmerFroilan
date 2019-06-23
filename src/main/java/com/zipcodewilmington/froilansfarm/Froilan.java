@@ -13,7 +13,4 @@ public class Froilan implements Farmer {
 
     }
 
-    public void plant(Crop crop) {
-
-    }
 }

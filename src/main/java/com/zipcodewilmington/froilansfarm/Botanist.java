@@ -5,6 +5,8 @@ package com.zipcodewilmington.froilansfarm;
 public interface Botanist{
 
 
-   public void plant(Crop crop);
+   default void plant(CropRow row){
+      //row.addCrop();
+   }
 
 }
