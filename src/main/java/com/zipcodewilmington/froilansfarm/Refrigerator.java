@@ -5,7 +5,7 @@ import java.util.List;
 
 public  class Refrigerator<T extends Edible> extends Storage<T> {
 
-    ArrayList<T> food = new ArrayList<>();
+    private ArrayList<T> food = new ArrayList<>();
 
     public void cleanUp() {
     }
@@ -45,11 +45,15 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
         return true;
     }
 
-
-    public Edible getNext(Edible edible){
-
-        return null;
-
+    public Integer getNumberOf(T edible){
+        Integer count = 0;
+        for(T t: food){
+            if(t.equals(edible)){
+                count++;
+            }
+        }
+        return count;
     }
+
 
 }
