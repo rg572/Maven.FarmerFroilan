@@ -92,4 +92,49 @@ public class RefrigeratorTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void removeSingleTest1(){
+        // Arrange
+        Refrigerator<Edible> fridge = new Refrigerator<>();
+        fridge.add(Edible.EARCORN);
+        fridge.add(Edible.EARCORN);
+        Integer expected = 1;
+
+        // Act
+        fridge.remove(Edible.EARCORN);
+        Integer actual = fridge.getNumberOf(Edible.EARCORN);
+
+        // Assert
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void removeSingleTest2(){
+        // Arrange
+        Refrigerator<Edible> fridge = new Refrigerator<>();
+        Integer expected = 0;
+
+        // Act
+        fridge.remove(Edible.EARCORN);
+        Integer actual = fridge.getNumberOf(Edible.EARCORN);
+
+        // Assert
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void removeMultipleTest1(){
+        // Arrange
+        Refrigerator<Edible> fridge = new Refrigerator<>();
+        for(int i = 0; i < 20; i++){ fridge.add(Edible.EARCORN); }
+        Integer expected = fridge.getNumberOf(Edible.EARCORN) - 6;
+
+        // Act
+        fridge.remove(Edible.EARCORN, 6);
+        Integer actual = fridge.getNumberOf(Edible.EARCORN);
+
+        // Assert
+        Assert.assertEquals(expected, actual);
+    }
+
 }
