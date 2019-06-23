@@ -185,6 +185,7 @@ public class Week {
 
                 if(farm.getHouse().getFridge().contains(Edible.EARCORN, 3)){
                     farm.getHouse().getFridge().remove(Edible.EARCORN, 3);
+                    cornLost+=3;
                 }
                 else{
                     stable.remove(horse);
@@ -194,8 +195,14 @@ public class Week {
             }
         }
         console.println(rider.getName() + " rode all the horses.");
-        console.println(feeder.getName() + " feed " + cornLost + " of corn to the horses. " + horsesLost + " died of starvation");
+        console.println(feeder.getName() + " fed " + cornLost + " of corn to the horses. " + horsesLost + " died of starvation");
 
+        eatBreakfast();
+
+
+    }
+
+    protected void eatBreakfast(){
         if(farm.getHouse().getFridge().contains(Edible.EARCORN, 1) &&
                 farm.getHouse().getFridge().contains(Edible.TOMATO, 2) &&
                 farm.getHouse().getFridge().contains(Edible.EGG, 5)){
@@ -221,8 +228,6 @@ public class Week {
         else {
             console.println("There isn't enough food in the fridge for Froilanda's breakfast. She starves to death");
         }
-
-
     }
 
 }

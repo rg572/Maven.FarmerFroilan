@@ -17,4 +17,28 @@ public class ChickenTest {
         Assert.assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void getName(){
+        Chicken chicken = new Chicken(1);
+        chicken.setName("Kurochka");
+        String expected ="Kurochka";
+        String actual = chicken.getName();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void setName(){
+        Chicken chicken = new Chicken(2);
+        chicken.setName("Name");
+        chicken.setName("Chicken");
+        String expected = "Chicken";
+        String actual = chicken.getName();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+
 }

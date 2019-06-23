@@ -1,11 +1,9 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Person  extends Animal implements NoiseMaker, Eater{
-    public String makeNoise() {
-        return null;
-    }
+public abstract class Person  extends Animal implements NoiseMaker, Eater{
+    public abstract String makeNoise();
 
-    public void eat(Edible edible) { }
+    public abstract String eat(Edible edible);
 
 
 }

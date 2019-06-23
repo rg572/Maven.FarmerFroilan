@@ -2,7 +2,6 @@ package com.zipcodewilmington.froilansfarm;
 
 public class Froilan extends Person implements Farmer {
     private static Froilan ourInstance = new Froilan();
-    private String name = "Froilan";
 
 
     public static Froilan getInstance() {
@@ -12,21 +11,28 @@ public class Froilan extends Person implements Farmer {
     private Froilan() {
     }
 
-    public void eat(Edible edible) {
-
+    @Override
+    public String makeNoise() {
+        return "Write more fucking tests";
     }
 
-    public void mount(Rideable rideable) {
-
+    public String eat(Edible edible) {
+        return "crunch";
     }
 
-    public void dismount(Rideable rideable) {
+    public String mount(Rideable rideable) {
+        rideable.setRider(Froilan.getInstance());
+        return String.format("Froilan gets on the %s", rideable.getName());
+    }
 
+    public String dismount(Rideable rideable) {
+        rideable.removeRider();
+        return String.format("Froilan gets off the %s", rideable.getName());
     }
 
     @Override
     public String getName() {
-        return name;
+        return "Froilan";
     }
 
 
