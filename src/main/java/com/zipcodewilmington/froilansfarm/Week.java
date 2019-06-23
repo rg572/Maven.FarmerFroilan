@@ -111,7 +111,7 @@ public class Week {
     public void runMorning(){
         Person rider;
         Person feeder;
-        if(currentDay.ordinal()%2 == 0){
+        if(currentDay.getDayInt()%2 == 0){
             rider = Froilan.getInstance();
             feeder = Froilanda.getInstance();
         }
@@ -120,7 +120,12 @@ public class Week {
             feeder = Froilan.getInstance();
         }
 
-        // rider
+        for(Stable stable : farm.getStables()){
+            for(Horse horse : stable.getAnimals()){
+                rider.ride(horse);
+                feeder.feed(horse);
+            }
+        }
 
 
     }
