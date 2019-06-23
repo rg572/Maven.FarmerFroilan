@@ -4,6 +4,17 @@ public final class CropDuster extends Aircraft implements FarmVehicle{
 
     private static final CropDuster INSTANCE = new CropDuster();
 
+    private Pilot rider;
+
+    public void setRider(Rider rider) {
+        this.rider = (Pilot)rider;
+    }
+
+    @Override
+    public void removeRider() {
+        this.rider = null;
+    }
+
     private CropDuster() {
     }
 
