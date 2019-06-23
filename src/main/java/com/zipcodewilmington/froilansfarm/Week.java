@@ -111,6 +111,12 @@ public class Week {
         printDay();
         delay(500);
         runMorning();
+        delay(500);
+        Froilanda.getInstance().mount(CropDuster.getINSTANCE());
+        Froilanda.getInstance().flyAircraft();
+        console.println(CropDuster.getINSTANCE().makeNoise());
+
+
 
     }
     public void runTuesday() {
