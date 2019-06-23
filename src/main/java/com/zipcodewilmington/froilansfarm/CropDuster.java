@@ -4,7 +4,7 @@ public class CropDuster extends Aircraft implements FarmVehicle{
     public void operate() {
     }
 
-     public void fertilize(CropRow cropRow){
+     public void fertilize(){
      }
 
     public String makeNoise() {
@@ -13,5 +13,10 @@ public class CropDuster extends Aircraft implements FarmVehicle{
 
     public void fly() {
 
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 }

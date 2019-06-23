@@ -90,7 +90,7 @@ public class Week {
         runMorning();
         delay(2000L);
         console.println("In the afternoon: ");
-
+        delay(100L);
         Froilan.getInstance().plant(new PotatoPlant());
         Froilan.getInstance().plant(new SoyPlant());
         Froilan.getInstance().plant(new CornStalk());
