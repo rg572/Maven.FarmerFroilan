@@ -19,24 +19,20 @@ public class Farm {
 
     protected void setUpFarm(){
         // set up field
-        field = new Field();
-        field.plantRow(new CropRow<CornStalk>());
-        field.plantRow(new CropRow<TomatoPlant>());
-        field.plantRow(new CropRow<TomatoPlant>());
-        field.plantRow(new CropRow<OkraPlant>());
-        field.plantRow(new CropRow<PotatoPlant>());
-        field.plantRow(new CropRow<SoyPlant>());
+        field = Field.getINSTANCE();
+
 
         // set up farmhouse
         house = FarmHouse.getInstance();
         for(int i = 0; i < 1000; i++){
-            house.getFridge().add(new EarCorn());
+            house.getFridge().add(Edible.EARCORN);
         }
         for(int i = 0; i < 100; i++){
-            house.getFridge().add(new Edamame());
-            house.getFridge().add(new Okra());
-            house.getFridge().add(new Potato());
-            house.getFridge().add(new Tomato());
+            house.getFridge().add(Edible.EDAMAME);
+            house.getFridge().add(Edible.EGG);
+            house.getFridge().add(Edible.OKRA);
+            house.getFridge().add(Edible.POTATO);
+            house.getFridge().add(Edible.TOMATO);
         }
 
         // set up stables
