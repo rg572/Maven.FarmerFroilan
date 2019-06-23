@@ -40,4 +40,30 @@ public class FarmTest {
 
     }
 
+    @Test
+    public void setUpChickenTest(){
+        Farm farm = new Farm();
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Chicken 1");
+        expected.add("Chicken 2");
+        expected.add("Chicken 3");
+        expected.add("Chicken 4");
+        expected.add("Chicken 5");
+        expected.add("Chicken 6");
+        expected.add("Chicken 7");
+        expected.add("Chicken 8");
+        expected.add("Chicken 9");
+        expected.add("Chicken 10");
+
+        farm.setUpFarm();
+        ArrayList<String> actual = new ArrayList<>();
+        for(ChickenCoop chickencoop: farm.getCoops()){
+            for (Chicken chicken: chickencoop.getChickens()){
+                actual.add(chicken.getName());
+            }
+        }
+
+        Assert.assertEquals(expected,actual);
+    }
+
 }
