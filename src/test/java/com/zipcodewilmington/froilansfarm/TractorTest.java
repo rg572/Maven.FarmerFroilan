@@ -21,7 +21,7 @@ public class TractorTest {
         Tractor tractor = new Tractor();
         String actual = tractor.getName();
         String exptected = "Tractor";
-        
+
         Assert.assertEquals(exptected, actual);
     }
 }
