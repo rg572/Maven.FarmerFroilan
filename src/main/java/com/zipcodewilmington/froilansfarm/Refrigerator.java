@@ -35,7 +35,7 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
             if(list.size() == 0 || !list.contains(edible)){
                 return false;
             }
-            list = list.subList(1, list.size()-1);
+            list = list.subList(1);
         }
         return true;
     }
