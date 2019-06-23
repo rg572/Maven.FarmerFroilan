@@ -17,6 +17,7 @@ public class Week {
     protected void runWeek() {
         runSunday();
         String input = console.getStringInput("At any time, type 'quit' to exit");
+        if (input.equals("quit")) weekOver = true;
         while (!weekOver) {
             toNextDay();
         }
@@ -72,31 +73,38 @@ public class Week {
 
     public void runSunday() {
         currentDay = Day.SUNDAY;
+        runMorning();
 
 
     }
     public void runMonday() {
         currentDay = Day.MONDAY;
+        runMorning();
 
     }
     public void runTuesday() {
         currentDay = Day.TUESDAY;
+        runMorning();
 
     }
     public void runWednesday() {
         currentDay = Day.WEDNESDAY;
+        runMorning();
     }
 
     public void runThursday() {
         currentDay = Day.THURSDAY;
+        runMorning();
 
     }
     public void runFriday() {
         currentDay = Day.FRIDAY;
+        runMorning();
 
     }
     public void runSaturday() {
         currentDay = Day.SATURDAY;
+        runMorning();
     }
 
     public void runMorning(){
