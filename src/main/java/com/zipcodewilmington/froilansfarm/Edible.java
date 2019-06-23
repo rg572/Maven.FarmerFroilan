@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 public enum Edible {
-    
+
     EGG,
     OKRA,
     TOMATO,
