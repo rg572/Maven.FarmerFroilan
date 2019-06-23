@@ -40,5 +40,27 @@ public class ChickenTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void makeNoise(){
+        Chicken chicken = new Chicken(2);
 
+        String expected =  "Bawk";
+        String actual =  chicken.makeNoise();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void eat(){
+        Chicken chicken = new Chicken(2);
+
+        String expected = "peckpeckpeck";
+        String actual = chicken.eat(Edible.TOMATO);
+
+        Assert.assertEquals(expected, actual);
+
+
+
+    }
 }
