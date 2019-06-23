@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Froilanda implements Farmer, Pilot {
+public class Froilanda extends Person implements Farmer, Pilot {
     public static Froilanda getInstance() {
         return Instance;
     }
