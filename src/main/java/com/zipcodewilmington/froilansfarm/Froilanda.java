@@ -16,11 +16,11 @@ public class Froilanda extends Person implements Farmer, Pilot {
     }
 
     public void mount(Rideable rideable) {
-
+        rideable.setRider(Froilanda.getInstance());
     }
 
     public void dismount(Rideable rideable) {
-
+        rideable.removeRider();
     }
 
     @Override

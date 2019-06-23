@@ -46,4 +46,18 @@ public class RefrigeratorTest {
         Assert.assertFalse(fridge.contains(Edible.EARCORN, 1));
     }
 
+    @Test
+    public void containsTest4(){
+        // Arrange
+        Refrigerator<Edible> fridge = new Refrigerator<>();
+
+        // Act
+        for(int i = 0; i < 5; i++){
+            fridge.add(Edible.EARCORN);
+        }
+
+        // Assert
+        Assert.assertFalse(fridge.contains(Edible.EGG, 1));
+    }
+
 }

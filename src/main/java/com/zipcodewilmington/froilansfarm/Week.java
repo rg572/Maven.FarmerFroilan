@@ -69,7 +69,7 @@ public class Week {
         delay(100L);
         console.println("All the animals escape into the wilderness, trampling the fields.");
         console.println("Froilanda leaves with them, riding a horse at the head of the stampede.");
-        delay(20L);
+        delay(100L);
         console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
         console.println("Froilan sits laughing surrounded by the burning farm.");
         console.println("The end.");
@@ -86,11 +86,15 @@ public class Week {
         pause = false;
     }
 
+    private void printDay() {
+        console.println(String.format("On %s: ", currentDay.toString()));
+    }
+
     public void runSunday() {
         currentDay = Day.SUNDAY;
         printDay();
         runMorning();
-        delay(2000);
+        delay(1000);
         console.println("In the afternoon: ");
         Froilan.getInstance().plantMany(new PotatoPlant(), 30);
         Froilan.getInstance().plantMany(new TomatoPlant(), 10);
@@ -98,17 +102,21 @@ public class Week {
         console.println("Froilan plants 30 potatoes, 10 tomato plants, and 200 corn stalks");
         console.println("Froilanda gets engine oil for her crop duster.");
         console.println("They go to bed with the sun.");
+        delay(500);
     }
 
-    private void printDay() {
-        console.println(String.format("On %s: ", currentDay.toString()));
-    }
 
     public void runMonday() {
         currentDay = Day.MONDAY;
         printDay();
         delay(500);
         runMorning();
+        delay(500);
+        Froilanda.getInstance().mount(CropDuster.getINSTANCE());
+        Froilanda.getInstance().flyAircraft();
+        console.println(CropDuster.getINSTANCE().makeNoise());
+
+
 
     }
     public void runTuesday() {
@@ -168,24 +176,25 @@ public class Week {
             feeder = Froilan.getInstance();
         }
 
+        Integer cornLost = 0;
+        Integer horsesLost = 0;
         for(Stable stable : farm.getStables()){
             for(Horse horse : stable.getHorses()){
                 rider.mount(horse);
-                console.println(rider.getName() + " is riding " + horse.getName());
                 rider.dismount(horse);
 
                 if(farm.getHouse().getFridge().contains(Edible.EARCORN, 3)){
                     farm.getHouse().getFridge().remove(Edible.EARCORN, 3);
-
-                    console.println(feeder.getName() + " feeds " + horse.getName() + " 3 ears of corn");
                 }
                 else{
                     stable.remove(horse);
-                    console.println("There's not enough corn in the fridge. " + horse.getName() + " starves to death.");
+                    horsesLost++;
                 }
 
             }
         }
+        console.println(rider.getName() + " rode all the horses.");
+        console.println(feeder.getName() + " feed " + cornLost + " of corn to the horses. " + horsesLost + " died of starvation");
 
         if(farm.getHouse().getFridge().contains(Edible.EARCORN, 1) &&
                 farm.getHouse().getFridge().contains(Edible.TOMATO, 2) &&
