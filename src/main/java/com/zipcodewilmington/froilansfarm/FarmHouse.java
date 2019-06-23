@@ -18,8 +18,8 @@ public class FarmHouse extends House {
 
     private FarmHouse() {
         fridge = new Refrigerator<Edible>();
-        tractor = new Tractor();
-        cropDuster = new CropDuster();
+        tractor = Tractor.getINSTANCE();
+        cropDuster = CropDuster.getINSTANCE();
         combineHarvester = new CombineHarvester();
     }
 
