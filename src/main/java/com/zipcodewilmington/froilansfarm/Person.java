@@ -5,9 +5,7 @@ public class Person  extends Animal implements NoiseMaker, Eater{
         return null;
     }
 
-    public void eat(Edible edible) {
-
-    }
+    public void eat(Edible edible) { }
 
 
 }
