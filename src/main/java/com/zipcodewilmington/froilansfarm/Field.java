@@ -17,7 +17,6 @@ public class Field {
         cropRows.add(new CropRow<OkraPlant>());
     }
 
-
     public ArrayList<CropRow> getCropRows() {
         return cropRows;
     }

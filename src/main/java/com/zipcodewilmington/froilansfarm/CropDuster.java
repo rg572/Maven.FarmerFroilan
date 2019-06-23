@@ -14,4 +14,9 @@ public class CropDuster extends Aircraft implements FarmVehicle{
     public void fly() {
 
     }
+
+    @Override
+    public String getName() {
+        return "CropDuster";
+    }
 }
