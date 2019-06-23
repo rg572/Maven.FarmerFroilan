@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -34,7 +35,8 @@ public class FarmTest {
         }
 
         // Assert
-        Assert.
+        Assert.assertEquals(expected, actual);
+
 
     }
 

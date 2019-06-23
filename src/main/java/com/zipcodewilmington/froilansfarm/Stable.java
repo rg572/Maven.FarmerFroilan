@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Stable extends AnimalStorage<Horse> {
 
-    ArrayList<Horse> horses;
+    ArrayList<Horse> horses = new ArrayList<Horse>();
 
     public void cleanUp() {
     }
