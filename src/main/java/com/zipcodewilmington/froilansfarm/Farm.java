@@ -47,7 +47,7 @@ public class Farm {
                 stables.get(i).add(new Horse((i)*3 + j + 1));
             }
         }
-        stables.get(0).add(new Horse(10));
+        stables.get(2).add(new Horse(10));
 
         // set up coops
         coops = new ArrayList<ChickenCoop>();
