@@ -26,7 +26,8 @@ public class Farm {
         field.plantRow(new CropRow<PotatoPlant>());
         field.plantRow(new CropRow<SoyPlant>());
 
-
+        // setup farmhouse
+        house = FarmHouse.getInstance();
     }
 
 

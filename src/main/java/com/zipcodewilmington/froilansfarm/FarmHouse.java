@@ -14,6 +14,11 @@ public class FarmHouse extends House {
     private Refrigerator<Edible> fridge;
 
     private FarmHouse() {
+        fridge = new Refrigerator<Edible>();
+    }
+
+    public Refrigerator<Edible> getFridge(){
+        return fridge;
     }
 
 
