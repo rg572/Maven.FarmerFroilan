@@ -4,6 +4,8 @@ public class Horse extends Animal implements Rideable{
 
     private String name;
 
+    private Rider rider;
+
     public Horse(Integer number){
         name = "Horse " + number.toString();
     }
@@ -14,12 +16,16 @@ public class Horse extends Animal implements Rideable{
 
     @Override
     public void setRider(Rider rider) {
-
+        this.rider = rider;
     }
 
     @Override
     public void removeRider() {
+        this.rider = null;
+    }
 
+    public Rider getRider() {
+        return rider;
     }
 
     @Override
