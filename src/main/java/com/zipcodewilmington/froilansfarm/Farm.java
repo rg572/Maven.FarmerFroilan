@@ -28,6 +28,15 @@ public class Farm {
 
         // setup farmhouse
         house = FarmHouse.getInstance();
+        for(int i = 0; i < 1000; i++){
+            house.getFridge().add(new EarCorn());
+        }
+        for(int i = 0; i < 100; i++){
+            house.getFridge().add(new Edamame());
+            house.getFridge().add(new Okra());
+            house.getFridge().add(new Potato());
+            house.getFridge().add(new Tomato());
+        }
     }
 
 
