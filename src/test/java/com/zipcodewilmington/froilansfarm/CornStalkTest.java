@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static com.zipcodewilmington.froilansfarm.Edible.EARCORN;
 import static org.junit.Assert.*;
 
 public class CornStalkTest {
@@ -29,14 +30,13 @@ public class CornStalkTest {
 
     @Test
     public void yieldTest2() {
-        Edible earCorn = null;
         Crop cornStalk = new CornStalk();
         cornStalk.setHasBeenFertilized(true);
         cornStalk.setReadyForHarvest(true);
-        Edible expected = earCorn;
+        Edible expected = EARCORN;
         Edible actual = cornStalk.yield();
 
-        Assert.assertEquals(earCorn, actual);
+        Assert.assertEquals(expected, actual);
 
     }
 }
