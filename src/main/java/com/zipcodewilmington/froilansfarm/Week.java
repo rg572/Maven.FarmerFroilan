@@ -32,6 +32,8 @@ public class Week {
             }
             input = console.getStringInput("Don't you want to start the new day?");
         }
+        console.println(String.format("On %s, Froilan and Froilanda: ", currentDay.toString()));
+
         switch (currentDay) {
             case SUNDAY:
                 runMonday();
@@ -62,10 +64,10 @@ public class Week {
     }
 
     private void runBurnItDown() {
-        console.println("Froilan and Froilanda, after a week of magical gmo produce, have gone psychotic and decide to burn it all down.");
+        console.println("Froilan and Froilanda, after a week of magical produce, have gone psychotic and decide to burn it all down.");
         console.println("All the animals escape into the wilderness, trampling the fields.");
+        console.println("Froilanda leaves with them, riding a horse at the head of the stampede.");
         console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
-        console.println("Froilanda takes this chance to leave the farm life forever.");
         console.println("Froilan sits laughing surrounded by the burning farm.");
         console.println("The end.");
         weekOver = true;
@@ -74,9 +76,8 @@ public class Week {
     public void runSunday() {
         currentDay = Day.SUNDAY;
         runMorning();
-
-
     }
+
     public void runMonday() {
         currentDay = Day.MONDAY;
         runMorning();

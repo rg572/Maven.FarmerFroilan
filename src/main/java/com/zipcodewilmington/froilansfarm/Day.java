@@ -16,7 +16,7 @@ public enum Day {
 
     @Override
     public String toString() {
-        String[] days = {"Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
         return days[this.ordinal()];
     }
 }
