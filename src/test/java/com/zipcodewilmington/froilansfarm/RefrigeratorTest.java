@@ -43,7 +43,7 @@ public class RefrigeratorTest {
         }
 
         // Assert
-        Assert.assertFalse(fridge.contains(Edible.EARCORN, 10));
+        Assert.assertFalse(fridge.contains(Edible.EARCORN, 1));
     }
 
 }
