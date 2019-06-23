@@ -18,6 +18,7 @@ public class MainApplication {
         }
         Farm farm = new Farm();
         Week newWeek = new Week(farm, console);
+        newWeek.runWeek();
     }
 
 

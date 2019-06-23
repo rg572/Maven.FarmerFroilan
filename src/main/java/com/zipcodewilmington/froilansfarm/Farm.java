@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Farm {
@@ -8,8 +9,8 @@ public class Farm {
 
     private FarmHouse house;
 
-    private List<Stable> stables;
-    private List<ChickenCoop> coops;
+    private ArrayList<Stable> stables;
+    private ArrayList<ChickenCoop> coops;
 
 
     public Farm() {
@@ -39,15 +40,17 @@ public class Farm {
         }
 
         // set up stables
+        stables = new ArrayList<Stable>();
         for(int i = 0; i < 3; i++){
             stables.add(new Stable());
             for(int j = 0; j < 3; j++){
-                stables.get(i).add(new Horse());
+                stables.get(i).add(new Horse((i)*3 + j + 1));
             }
         }
-        stables.get(0).add(new Horse());
+        stables.get(2).add(new Horse(10));
 
         // set up coops
+        coops = new ArrayList<ChickenCoop>();
         for(int i = 0; i < 4; i++){
             coops.add(new ChickenCoop());
             for(int j=0; j < 3; j++){
@@ -65,5 +68,31 @@ public class Farm {
     }
 
 
+    public Field getField() {
+        return field;
+    }
 
+    public void setField(Field field) {
+        this.field = field;
+    }
+
+    public FarmHouse getHouse() {
+        return house;
+    }
+
+    public void setHouse(FarmHouse house) {
+        this.house = house;
+    }
+
+    public void setStables(ArrayList<Stable> stables) {
+        this.stables = stables;
+    }
+
+    public List<ChickenCoop> getCoops() {
+        return coops;
+    }
+
+    public void setCoops(ArrayList<ChickenCoop> coops) {
+        this.coops = coops;
+    }
 }
