@@ -8,25 +8,26 @@ public class Week {
     private Farm farm;
     private Console console;
     private Boolean weekOver;
+    private Boolean pause;
 
     public Week(Farm farm, Console console) {
         this.farm = farm;
         this.console = console;
-        currentDay = null;
         weekOver = false;
+        pause = false;
+        currentDay = Day.LIMINALDAY;
     }
 
     protected void runWeek() {
-        runSunday();
-        String input = console.getStringInput("At any time, type 'quit' to exit");
-        if (input.equals("quit")) weekOver = true;
+        delay(50L);
+        console.println("At any time, type 'quit' to exit");
         while (!weekOver) {
             toNextDay();
         }
     }
 
     protected void toNextDay() {
-        String input = console.getStringInput("Enter 'Wake up' to begin next day");
+        String input = console.getStringInput("Enter 'Wake up' to begin the day");
         while (!input.equalsIgnoreCase("wake up")) {
             if (input.equals("quit")) {
                 weekOver = true;
@@ -34,9 +35,10 @@ public class Week {
             }
             input = console.getStringInput("Don't you want to start the new day?");
         }
-        console.println(String.format("On %s: ", currentDay.toString()));
-
         switch (currentDay) {
+            case LIMINALDAY:
+                runSunday();
+                break;
             case SUNDAY:
                 runMonday();
                 break;
@@ -58,19 +60,16 @@ public class Week {
             case SATURDAY:
                 runBurnItDown();
                 break;
-            default:
-                runSunday();
-                break;
         }
 
     }
 
     private void runBurnItDown() {
         console.println("Froilan and Froilanda, after a week of magical produce, have gone psychotic and decide to burn it all down.");
-        delay(300L);
+        delay(100L);
         console.println("All the animals escape into the wilderness, trampling the fields.");
         console.println("Froilanda leaves with them, riding a horse at the head of the stampede.");
-        delay(500L);
+        delay(20L);
         console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
         console.println("Froilan sits laughing surrounded by the burning farm.");
         console.println("The end.");
@@ -78,42 +77,48 @@ public class Week {
     }
 
     protected void delay(long delayBy) {
+        pause = true;
         long currentTime = System.currentTimeMillis();
         long goalTime = currentTime + delayBy;
         while (System.currentTimeMillis() != goalTime) {
             continue;
         }
+        pause = false;
     }
 
     public void runSunday() {
         currentDay = Day.SUNDAY;
-        runMorning();
-        delay(2000L);
+        printDay();
+        //runMorning();
         console.println("In the afternoon: ");
-        delay(100L);
         Froilan.getInstance().plantMany(new PotatoPlant(), 30);
         Froilan.getInstance().plantMany(new TomatoPlant(), 10);
         Froilan.getInstance().plantMany(new CornStalk(), 200);
         console.println("Froilan plants 30 potatoes, 10 tomato plants, and 200 corn stalks");
     }
 
+    private void printDay() {
+        console.println(String.format("On %s: ", currentDay.toString()));
+    }
+
     public void runMonday() {
         currentDay = Day.MONDAY;
+        printDay();
 
         runMorning();
 
     }
     public void runTuesday() {
         currentDay = Day.TUESDAY;
+        printDay();
         runMorning();
 
     }
     public void runWednesday() {
         currentDay = Day.WEDNESDAY;
+        printDay();
         runMorning();
-        delay(500L);
         console.println("In the afternoon: ");
-        delay(100L);
         Froilanda.getInstance().plantMany(new PotatoPlant(), 60);
         Froilanda.getInstance().plantMany(new SoyPlant(), 70);
         Froilanda.getInstance().plantMany(new CornStalk(), 250);
@@ -125,19 +130,20 @@ public class Week {
 
     public void runThursday() {
         currentDay = Day.THURSDAY;
+        printDay();
         runMorning();
 
     }
     public void runFriday() {
         currentDay = Day.FRIDAY;
+        printDay();
         runMorning();
 
     }
     public void runSaturday() {
-
         currentDay = Day.SATURDAY;
+        printDay();
         runMorning();
-
         console.println("Everybody Dance! It is Saturday!");
         console.println("Smells like teen spirit song started");
         console.println("Froilan took off his hat, and jacket and followed his inner feelings to move");
