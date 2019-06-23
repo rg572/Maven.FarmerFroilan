@@ -10,7 +10,7 @@ public class ChickenTest {
 
     @Test
     public void yield() {
-        Chicken chicken = new Chicken();
+        Chicken chicken = new Chicken(1);
         Edible actual = chicken.yield();
         Edible expected = EGG;
 
