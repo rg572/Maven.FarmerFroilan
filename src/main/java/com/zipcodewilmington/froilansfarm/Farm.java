@@ -19,13 +19,7 @@ public class Farm {
 
     protected void setUpFarm(){
         // set up field
-        field = new Field();
-        field.plantRow(new CropRow<CornStalk>());
-        field.plantRow(new CropRow<TomatoPlant>());
-        field.plantRow(new CropRow<TomatoPlant>());
-        field.plantRow(new CropRow<OkraPlant>());
-        field.plantRow(new CropRow<PotatoPlant>());
-        field.plantRow(new CropRow<SoyPlant>());
+        Field field = Field.getINSTANCE();
 
         // set up farmhouse
         house = FarmHouse.getInstance();
