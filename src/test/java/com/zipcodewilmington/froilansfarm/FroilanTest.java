@@ -62,6 +62,6 @@ public class FroilanTest {
     public void plantMany() {
         Froilan froilan = new Froilan();
         Crop crop = new TomatoPlant();
-        froilan.plantMany(crop, 5);
+        froilan.plant(crop, 5);
     }
 }
