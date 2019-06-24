@@ -122,17 +122,16 @@ public class Week {
         currentDay = Day.TUESDAY;
         printDay();
         runMorning();
-        
-
     }
+
     public void runWednesday() {
         currentDay = Day.WEDNESDAY;
         printDay();
         runMorning();
         console.println("In the afternoon: ");
-        Froilanda.getInstance().plantMany(new PotatoPlant(), 60);
-        Froilanda.getInstance().plantMany(new SoyPlant(), 70);
-        Froilanda.getInstance().plantMany(new CornStalk(), 250);
+        Froilanda.getInstance().plant(new PotatoPlant(), 60);
+        Froilanda.getInstance().plant(new SoyPlant(), 70);
+        Froilanda.getInstance().plant(new CornStalk(), 250);
         Froilan.getInstance().plant(new OkraPlant(), 50);
         Froilan.getInstance().plant(new TomatoPlant(), 80);
         console.println("Froilanda plants 60 potatoes, 70 soy plants, and 250 corn stalks");

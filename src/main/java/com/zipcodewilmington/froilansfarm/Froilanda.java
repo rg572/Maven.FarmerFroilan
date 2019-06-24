@@ -39,7 +39,7 @@ public class Froilanda extends Person implements Farmer, Pilot {
         Field.getINSTANCE().getMap().get(crop.getName()).addCrop(crop);
     }
 
-    public void plantMany(Crop crop, int howMany) {
+    public void plant(Crop crop, int howMany) {
         for (int i = 0; i < howMany; i++) {
             try {
                 plant(crop.getClass().newInstance());
