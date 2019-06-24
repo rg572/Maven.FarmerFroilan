@@ -24,8 +24,9 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
 
     public void add(T t) {
         food.add(t);
-
     }
+
+
 
     public Boolean contains(T edible, Integer number){
         List<T> list = food;

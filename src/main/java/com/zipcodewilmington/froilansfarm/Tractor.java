@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -17,14 +18,17 @@ public final class Tractor extends Vehicle implements FarmVehicle {
     }
 
     public void harvest(Crop crop){
-       CropRow<Crop> cropRow = Field.getINSTANCE().getMap().get("crop");
-       for (Crop c : cropRow.getCropRow()) {
-           Silo.getInstance().add(c.yield());
-       }
+       Silo.getInstance().add(crop.yield());
     }
 
     public void operate() {
-
+        HashMap<String, CropRow> cropRows = Field.getINSTANCE().getMap();
+        for (CropRow cropRow : cropRows.values()) {
+            ArrayList<Crop> cr = cropRow.getCropRow();
+            for (Crop c : cr) {
+                harvest(c);
+            }
+        }
     }
 
     public String makeNoise() {

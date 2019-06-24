@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.List;
+
 public class Froilan extends Person implements Farmer {
     private static Froilan ourInstance = new Froilan();
 
@@ -50,5 +52,17 @@ public class Froilan extends Person implements Farmer {
                 e.printStackTrace();
             }
         }
+    }
+    public String harvestEggs(Farm farm) {
+        Refrigerator<Edible> fridge = farm.getHouse().getFridge();
+        List<ChickenCoop> coops = farm.getCoops();
+        for (ChickenCoop coop : coops) {
+            List<Chicken> chickens = coop.getChickens();
+            for (Chicken chicken : chickens) {
+                fridge.add(chicken.yield());
+            }
+        }
+        return "The hens reluctantly yield their eggs to Froilan";
+
     }
 }

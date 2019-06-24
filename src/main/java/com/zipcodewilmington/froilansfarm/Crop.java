@@ -4,6 +4,12 @@ public abstract class Crop implements Produce{
     Boolean hasBeenFertilized;
     Boolean readyForHarvest;
 
+    public Crop(Boolean hasBeenFertilized, Boolean readyForHarvest) {
+        this.hasBeenFertilized = true;
+        this.readyForHarvest = true;
+    }
+
+
     public Boolean getHasBeenFertilized() { return hasBeenFertilized; }
 
     public void setHasBeenFertilized(Boolean hasBeenFertilized) {

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Silo extends Storage<Edible> {
     private static Silo ourInstance = new Silo();
     private ArrayList<Edible> food;
+
     public static Silo getInstance() {
         return ourInstance;
     }
@@ -23,4 +24,5 @@ public class Silo extends Storage<Edible> {
     void add(Edible edible) {
         food.add(edible);
     }
+
 }

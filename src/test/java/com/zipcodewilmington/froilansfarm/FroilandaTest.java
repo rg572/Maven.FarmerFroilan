@@ -61,7 +61,7 @@ public class FroilandaTest {
     public void plantMany() {
         Froilanda froilanda = new Froilanda();
         Crop crop = new TomatoPlant();
-        froilanda.plantMany(crop, 5);
+        froilanda.plant(crop, 5);
     }
 
     @Test

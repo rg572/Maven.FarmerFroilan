@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.List;
+
 public class Froilanda extends Person implements Farmer, Pilot {
     public static Froilanda getInstance() {
         return Instance;
@@ -54,5 +56,17 @@ public class Froilanda extends Person implements Farmer, Pilot {
     @Override
     public String flyAircraft(Aircraft aircraft) {
         return String.format("Froilanda starts the %s to set off", aircraft.getName());
+    }
+
+    public String harvestEggs(Farm farm) {
+        Refrigerator<Edible> fridge = farm.getHouse().getFridge();
+        List<ChickenCoop> coops = farm.getCoops();
+        for (ChickenCoop coop : coops) {
+            List<Chicken> chickens = coop.getChickens();
+            for (Chicken chicken : chickens) {
+                fridge.add(chicken.yield());
+            }
+        }
+        return "The hens happily yield their eggs to Froilanda";
     }
 }

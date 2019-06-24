@@ -6,6 +6,11 @@ public class Chicken extends Animal implements Produce {
     private Boolean hasBeenFertilized = false;
     private String name;
 
+    public Chicken(Boolean hasBeenFertilized, String name) {
+        this.hasBeenFertilized = false;
+        this.name = "Henny Hen Hen";
+    }
+
     public Edible yield() {
         if (!hasBeenFertilized){
             return EGG;
