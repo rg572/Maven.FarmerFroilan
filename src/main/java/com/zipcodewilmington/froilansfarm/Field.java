@@ -30,4 +30,5 @@ public class Field {
     public HashMap<String, CropRow> getMap() {
         return cropRows;
     }
+
 }

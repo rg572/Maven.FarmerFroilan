@@ -66,10 +66,12 @@ public class Week {
         console.println("Froilan and Froilanda, after a week of magical produce, have gone psychotic and decide to burn it all down.");
         delay(100L);
         console.println("All the animals escape into the wilderness, trampling the fields.");
+        console.println(Froilanda.getInstance().makeNoise());
         console.println("Froilanda leaves with them, riding a horse at the head of the stampede.");
         delay(100L);
         console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
-        console.println("Froilan sits laughing surrounded by the burning farm.");
+        console.println(Froilan.getInstance().makeNoise());
+        console.println("Froilan sits laughing to himself surrounded by the burning farm.");
         console.println("The end.");
         weekOver = true;
     }
@@ -113,12 +115,14 @@ public class Week {
         console.println(Froilanda.getInstance().mount(CropDuster.getINSTANCE()));
         console.println(Froilanda.getInstance().flyAircraft(CropDuster.getINSTANCE()));
         console.println(CropDuster.getINSTANCE().makeNoise());
+        CropDuster.getINSTANCE().fertilize();
     }
 
     public void runTuesday() {
         currentDay = Day.TUESDAY;
         printDay();
         runMorning();
+        
 
     }
     public void runWednesday() {
@@ -180,7 +184,7 @@ public class Week {
                 rider.dismount(horse);
 
                 if(farm.getHouse().getFridge().contains(Edible.EARCORN, 3)){
-                    farm.getHouse().getFridge().remove(Edible.EARCORN, 3);
+                    farm.getHouse().getFridge().remove(Edible.EARCORN, 3, horse);
                     cornLost+=3;
                 }
                 else{
@@ -203,9 +207,9 @@ public class Week {
                 farm.getHouse().getFridge().contains(Edible.TOMATO, 2) &&
                 farm.getHouse().getFridge().contains(Edible.EGG, 5)){
 
-            farm.getHouse().getFridge().remove(Edible.EARCORN);
-            farm.getHouse().getFridge().remove(Edible.TOMATO, 2);
-            farm.getHouse().getFridge().remove(Edible.EGG, 5);
+            farm.getHouse().getFridge().remove(Edible.EARCORN, Froilan.getInstance());
+            farm.getHouse().getFridge().remove(Edible.TOMATO, 2, Froilan.getInstance());
+            farm.getHouse().getFridge().remove(Edible.EGG, 5, Froilan.getInstance());
 
             console.println("Froilan eats 1 ear of corn, 2 tomatoes, and 5 eggs for breakfast");
         }
@@ -217,9 +221,10 @@ public class Week {
                 farm.getHouse().getFridge().contains(Edible.TOMATO, 1) &&
                 farm.getHouse().getFridge().contains(Edible.EGG, 2)){
 
-            farm.getHouse().getFridge().remove(Edible.EARCORN, 2);
-            farm.getHouse().getFridge().remove(Edible.TOMATO);
-            farm.getHouse().getFridge().remove(Edible.EGG, 2);
+            farm.getHouse().getFridge().remove(Edible.EARCORN, 2, Froilanda.getInstance());
+            farm.getHouse().getFridge().remove(Edible.TOMATO, Froilanda.getInstance());
+            farm.getHouse().getFridge().remove(Edible.EGG, 2, Froilanda.getInstance());
+
             console.println("Froilanda eats 2 ears of corn, 1 tomato, and 2 eggs for breakfast");
         }
         else {

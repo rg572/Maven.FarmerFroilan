@@ -1,5 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.Collection;
+import java.util.HashMap;
+
 public final class Tractor extends Vehicle implements FarmVehicle {
 
     public static Tractor getINSTANCE() {
@@ -12,7 +15,10 @@ public final class Tractor extends Vehicle implements FarmVehicle {
     }
 
     public void harvest(Crop crop){
-
+       CropRow<Crop> cropRow = Field.getINSTANCE().getMap().get("crop");
+       for (Crop c : cropRow.getCropRow()) {
+           Silo.getInstance().add(c.yield());
+       }
     }
 
     public void operate() {
