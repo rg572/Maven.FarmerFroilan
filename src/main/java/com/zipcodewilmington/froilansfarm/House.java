@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class House extends AnimalStorage<Person> {
+public abstract class House extends AnimalStorage<Person> {
 
 
     public void cleanUp() {
@@ -10,11 +10,4 @@ public class House extends AnimalStorage<Person> {
         return null;
     }
 
-    public void remove(Person person) {
-
-    }
-
-    public void add(Person person) {
-
-    }
 }

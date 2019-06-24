@@ -5,9 +5,6 @@ import java.util.ArrayList;
 public class ChickenCoop extends AnimalStorage<Chicken>{
     ArrayList<Chicken> chickens = new ArrayList<>();
 
-    void cleanUp() {
-    }
-
    public Integer find(Chicken chicken) {
 
         return chickens.indexOf(chicken);
