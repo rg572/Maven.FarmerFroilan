@@ -22,7 +22,7 @@ public class FroilanTest {
 
     @Test
     public void eatTest(){
-        // Arrage
+        // Arrange
         Froilan froilan = Froilan.getInstance();
         String expected = "crunch";
 
@@ -33,7 +33,46 @@ public class FroilanTest {
         Assert.assertEquals(expected, actual);
     }
 
-    //@Test
-    //public void
+    @Test
+    public void mountTest(){
+        // Arrange
+        Froilan froilan = Froilan.getInstance();
+        Horse horse = new Horse(170);
+        String expected = "Froilan gets on the Horse 170";
+
+        // Act
+        String actual = froilan.mount(horse);
+
+        // Assert
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dismountTest(){
+        // Arrange
+        Froilan froilan = Froilan.getInstance();
+        Horse horse = new Horse(170);
+        String expected = "Froilan gets off the Horse 170";
+
+        // Act
+        String actual = froilan.dismount(horse);
+
+        // Assert
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getNameTest(){
+        // Arrange
+        Froilan froilan = Froilan.getInstance();
+        String expected = "Froilan";
+
+        // Act
+        String actual = froilan.getName();
+
+        // Assert
+        Assert.assertEquals(expected, actual);
+    }
+
 
 }
