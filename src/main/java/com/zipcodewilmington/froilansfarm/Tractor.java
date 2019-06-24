@@ -11,6 +11,8 @@ public final class Tractor extends Vehicle implements FarmVehicle {
 
     private static final Tractor INSTANCE = new Tractor();
 
+    private Rider rider;
+
     protected Tractor() {
     }
 
@@ -36,11 +38,16 @@ public final class Tractor extends Vehicle implements FarmVehicle {
 
     @Override
     public void setRider(Rider rider) {
+        this.rider=rider;
 
+    }
+
+    public Rider getRider(){
+        return rider;
     }
 
     @Override
     public void removeRider() {
-
+     this.rider=null;
     }
 }
