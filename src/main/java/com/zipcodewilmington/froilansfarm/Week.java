@@ -122,6 +122,7 @@ public class Week {
         currentDay = Day.TUESDAY;
         printDay();
         runMorning();
+        
     }
 
     public void runWednesday() {
