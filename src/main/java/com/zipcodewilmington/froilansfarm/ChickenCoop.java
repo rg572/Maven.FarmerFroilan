@@ -5,10 +5,6 @@ import java.util.ArrayList;
 public class ChickenCoop extends AnimalStorage<Chicken>{
     ArrayList<Chicken> chickens = new ArrayList<>();
 
-   public Integer find(Chicken chicken) {
-
-        return chickens.indexOf(chicken);
-    }
 
    public void remove(Chicken chicken) {
         chickens.remove(chicken);
@@ -19,9 +15,6 @@ public class ChickenCoop extends AnimalStorage<Chicken>{
 
     }
 
-    public Chicken get(Integer index){
-        return chickens.get(index);
-    }
 
     public ArrayList<Chicken> getChickens() {
         return chickens;

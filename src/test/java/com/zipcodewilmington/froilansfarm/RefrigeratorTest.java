@@ -130,7 +130,7 @@ public class RefrigeratorTest {
         Integer expected = fridge.getNumberOf(Edible.EARCORN) - 6;
 
         // Act
-        fridge.remove(Edible.EARCORN, 6);
+        fridge.remove(Edible.EARCORN, 6, Froilan.getInstance());
         Integer actual = fridge.getNumberOf(Edible.EARCORN);
 
         // Assert
