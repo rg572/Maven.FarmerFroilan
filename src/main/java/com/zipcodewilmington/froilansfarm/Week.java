@@ -195,7 +195,7 @@ public class Week {
             }
         }
         console.println(rider.getName() + " rode all the horses.");
-        console.println(feeder.getName() + " fed " + cornLost + " of corn to the horses. " + horsesLost + " died of starvation");
+        console.println(feeder.getName() + " fed " + cornLost + " ears of corn to the horses. " + horsesLost + " died of starvation");
 
         eatBreakfast();
 

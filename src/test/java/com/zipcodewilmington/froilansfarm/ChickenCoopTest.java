@@ -22,12 +22,25 @@ public class ChickenCoopTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
-    public void get() {
-
-    }
 
     @Test
-    public void getChickens() {
+    public void removeTest() {
+        // Arrange
+        ChickenCoop coup = new ChickenCoop();
+        ArrayList<Chicken> expected = new ArrayList<>();
+        Chicken chicken1 = new Chicken(1);
+        Chicken chicken2 = new Chicken(2);
+        for(int i = 0; i < 5; i++){
+            coup.add(chicken2);
+            expected.add(chicken2);
+        }
+        coup.add(chicken1);
+
+        // Act
+        coup.remove(chicken1);
+        ArrayList<Chicken> actual = coup.getChickens();
+
+        // Assert
+        Assert.assertEquals(expected, actual);
     }
 }
