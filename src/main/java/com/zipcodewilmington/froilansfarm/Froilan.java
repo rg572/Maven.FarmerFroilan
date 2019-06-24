@@ -8,7 +8,7 @@ public class Froilan extends Person implements Farmer {
         return ourInstance;
     }
 
-    private Froilan() {
+    protected Froilan() {
     }
 
     @Override
