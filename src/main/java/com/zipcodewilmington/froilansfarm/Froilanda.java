@@ -8,7 +8,7 @@ public class Froilanda extends Person implements Farmer, Pilot {
     private final static Froilanda Instance= new Froilanda();
 
 
-    private Froilanda() {
+    public Froilanda() {
     }
 
     @Override
