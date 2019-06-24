@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.sun.xml.internal.xsom.impl.ForeignAttributesImpl;
-
 public class Week {
 
     private Day currentDay;
@@ -96,9 +94,9 @@ public class Week {
         runMorning();
         delay(1000);
         console.println("In the afternoon: ");
-        Froilan.getInstance().plantMany(new PotatoPlant(), 30);
-        Froilan.getInstance().plantMany(new TomatoPlant(), 10);
-        Froilan.getInstance().plantMany(new CornStalk(), 200);
+        Froilan.getInstance().plant(new PotatoPlant(), 30);
+        Froilan.getInstance().plant(new TomatoPlant(), 10);
+        Froilan.getInstance().plant(new CornStalk(), 200);
         console.println("Froilan plants 30 potatoes, 10 tomato plants, and 200 corn stalks");
         console.println("Froilanda gets engine oil for her crop duster.");
         console.println("They go to bed with the sun.");
@@ -131,8 +129,8 @@ public class Week {
         Froilanda.getInstance().plantMany(new PotatoPlant(), 60);
         Froilanda.getInstance().plantMany(new SoyPlant(), 70);
         Froilanda.getInstance().plantMany(new CornStalk(), 250);
-        Froilan.getInstance().plantMany(new OkraPlant(), 50);
-        Froilan.getInstance().plantMany(new TomatoPlant(), 80);
+        Froilan.getInstance().plant(new OkraPlant(), 50);
+        Froilan.getInstance().plant(new TomatoPlant(), 80);
         console.println("Froilanda plants 60 potatoes, 70 soy plants, and 250 corn stalks");
         console.println("Froilan plants 50 okra plants, and 80 tomato plants");
     }
@@ -208,6 +206,7 @@ public class Week {
             farm.getHouse().getFridge().remove(Edible.EARCORN);
             farm.getHouse().getFridge().remove(Edible.TOMATO, 2);
             farm.getHouse().getFridge().remove(Edible.EGG, 5);
+
             console.println("Froilan eats 1 ear of corn, 2 tomatoes, and 5 eggs for breakfast");
         }
         else {

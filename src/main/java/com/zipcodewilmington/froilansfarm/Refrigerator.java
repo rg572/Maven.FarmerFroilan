@@ -11,6 +11,10 @@ public  class Refrigerator<T extends Edible> extends Storage<T> {
     public void remove(T t) {
         food.remove(t);
     }
+    public void remove(T t, Eater eater) {
+        food.remove(t);
+        eater.eat(t);
+    }
 
     public void remove(T t, Integer number){
         for(int i = 0; i < number; i++){
