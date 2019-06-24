@@ -4,14 +4,7 @@ import java.util.ArrayList;
 
 public class Stable extends AnimalStorage<Horse> {
 
-    ArrayList<Horse> horses = new ArrayList<Horse>();
-
-    public void cleanUp() {
-    }
-
-    public Integer find(Horse horse) {
-        return horses.indexOf(horse);
-    }
+    ArrayList<Horse> horses = new ArrayList<>();
 
     public void remove(Horse horse) {
         horses.remove(horse);
@@ -19,10 +12,6 @@ public class Stable extends AnimalStorage<Horse> {
 
     public void add(Horse horse){
         horses.add(horse);
-    }
-
-    public Horse get(Integer index){
-        return horses.get(index);
     }
 
     public ArrayList<Horse> getHorses(){
