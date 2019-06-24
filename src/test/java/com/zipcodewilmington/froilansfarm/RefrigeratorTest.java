@@ -126,11 +126,13 @@ public class RefrigeratorTest {
     public void removeMultipleTest1(){
         // Arrange
         Refrigerator<Edible> fridge = new Refrigerator<>();
+        Eater eater = Froilanda.getInstance();
         for(int i = 0; i < 20; i++){ fridge.add(Edible.EARCORN); }
         Integer expected = fridge.getNumberOf(Edible.EARCORN) - 6;
 
         // Act
-        fridge.remove(Edible.EARCORN, 6, Froilan.getInstance());
+
+        fridge.remove(Edible.EARCORN, 6, eater);
         Integer actual = fridge.getNumberOf(Edible.EARCORN);
 
         // Assert
