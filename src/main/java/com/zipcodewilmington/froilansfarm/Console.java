@@ -22,7 +22,7 @@ public final class Console {
 
     public void println(String val, Object... vals) {
         long currentTime = System.currentTimeMillis();
-        long goalTime = currentTime + 150;
+        long goalTime = currentTime + 250;
         while (System.currentTimeMillis() != goalTime) {
             continue;
         }

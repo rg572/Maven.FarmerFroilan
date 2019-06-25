@@ -11,17 +11,21 @@ public class Field {
     private HashMap<String, CropRow> cropRows;
 
     private Field() {
-        cropRows = new HashMap<String, CropRow>(5);
+        cropRows = new HashMap(5);
         cropRows.put("corn", new CropRow<CornStalk>());
         cropRows.put("tomato", new CropRow<TomatoPlant>());
         cropRows.put("potato", new CropRow<PotatoPlant>());
         cropRows.put("soy", new CropRow<SoyPlant>());
         cropRows.put("okra", new CropRow<OkraPlant>());
+
     }
 
     public Collection<CropRow> getCropRows() {
         return cropRows.values();
     }
+
+
+
 
     public static Field getINSTANCE() {
         return INSTANCE;

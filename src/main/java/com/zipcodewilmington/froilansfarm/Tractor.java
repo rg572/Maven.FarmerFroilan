@@ -21,13 +21,11 @@ public final class Tractor extends Vehicle implements FarmVehicle {
        Silo.getInstance().add(crop.yield());
     }
 
-    public void operate() {
-        HashMap<String, CropRow> cropRows = Field.getINSTANCE().getMap();
-        for (CropRow cropRow : cropRows.values()) {
-            ArrayList<Crop> cr = cropRow.getCropRow();
-            for (Crop c : cr) {
-                harvest(c);
-            }
+    public void operate(CropRow cropRow) {
+        ArrayList<Crop> cr = cropRow.getCropRow();
+        for (Crop c : cr) {
+            harvest(c);
+            cr.remove(c);
         }
     }
 
@@ -53,5 +51,11 @@ public final class Tractor extends Vehicle implements FarmVehicle {
     @Override
     public void removeRider() {
      this.rider=null;
+    }
+
+    @Override
+    public void operate() {
+        CropRow cr = Field.getINSTANCE().getMap().get("corn");
+        operate(cr);
     }
 }

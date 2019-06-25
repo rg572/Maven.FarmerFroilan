@@ -1,6 +1,13 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public final class CombineHarvester extends Vehicle implements FarmVehicle {
+    public static CombineHarvester getINSTANCE() {
+        return INSTANCE;
+    }
+
     private static final CombineHarvester INSTANCE = new CombineHarvester();
     private Rider rider;
 
@@ -8,15 +15,23 @@ public final class CombineHarvester extends Vehicle implements FarmVehicle {
     }
 
     public void operate() {
-
+        Field field = Field.getINSTANCE();
+        Collection<CropRow> cropRows = field.getCropRows();
+        for (CropRow cropRow : cropRows) {
+            ArrayList<Crop> cr = cropRow.getCropRow();
+            for (Crop crop : cr) {
+                harvest(crop);
+                cr.remove(crop);
+            }
+        }
     }
 
     public String makeNoise() {
         return "Whirrrr.....";
     }
 
-    public void harvest() {
-
+    public void harvest(Crop crop) {
+        Silo.getInstance().add(crop.yield());
     }
 
     @Override

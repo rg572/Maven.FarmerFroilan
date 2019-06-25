@@ -68,10 +68,12 @@ public class Week {
         console.println("Froilan and Froilanda, after a week of magical produce, have gone psychotic and decide to burn it all down.");
         delay(100L);
         console.println("All the animals escape into the wilderness, trampling the fields.");
+        console.println("Watching the animals break free, Froilanda remarks:");
         console.println(Froilanda.getInstance().makeNoise());
         console.println("Froilanda leaves with them, riding a horse at the head of the stampede.");
         delay(100L);
         console.println("The farm vehicles explode, due to highly flammable fertilizer and pesticides.");
+        console.println("Froilan looks at this all and says:");
         console.println(Froilan.getInstance().makeNoise());
         console.println("Froilan sits laughing to himself surrounded by the burning farm.");
         console.println("The end.");
@@ -101,7 +103,7 @@ public class Week {
         Froilan.getInstance().plant(new TomatoPlant(), 10);
         Froilan.getInstance().plant(new CornStalk(), 200);
         console.println("Froilan plants 30 potatoes, 10 tomato plants, and 200 corn stalks");
-        console.println("Froilanda gets engine oil for her crop duster.");
+        console.println("Froilanda takes the afternoon off");
         console.println("They go to bed with the sun.");
     }
 
@@ -110,6 +112,7 @@ public class Week {
         currentDay = Day.MONDAY;
         printDay();
         runMorning();
+        console.println("In the afternoon Froilanda gets out the crop duster tp fertilize the crops.");
         console.println(Froilanda.getInstance().mount(CropDuster.getINSTANCE()));
         console.println(Froilanda.getInstance().flyAircraft(CropDuster.getINSTANCE()));
         console.println(CropDuster.getINSTANCE().makeNoise());
@@ -126,14 +129,16 @@ public class Week {
         printDay();
         runMorning();
         console.println(Froilan.getInstance().mount(Tractor.getINSTANCE()));
+        Tractor.getINSTANCE().operate(Field.getINSTANCE().getMap().get("potato"));
         console.println(Tractor.getINSTANCE().makeNoise());
-        Tractor.getINSTANCE().operate();
+        Tractor.getINSTANCE().operate(Field.getINSTANCE().getMap().get("tomato"));
+        console.println(Tractor.getINSTANCE().makeNoise());
+        Tractor.getINSTANCE().operate(Field.getINSTANCE().getMap().get("corn"));
+        console.println(Tractor.getINSTANCE().makeNoise());
+        console.println("Row by row, Froilan harvests Sunday's plants to add to the silo.");
         console.println(Froilan.getInstance().dismount(Tractor.getINSTANCE()));
-        console.println("Froilan fills up the silo with Sunday's plants");
         console.println("Froilanda goes around the coops to harvest some eggs.");
         console.println(Froilanda.getInstance().harvestEggs(farm));
-
-        
     }
 
     public void runWednesday() {
@@ -148,18 +153,37 @@ public class Week {
         Froilan.getInstance().plant(new TomatoPlant(), 80);
         console.println("Froilanda plants 60 potatoes, 70 soy plants, and 250 corn stalks");
         console.println("Froilan plants 50 okra plants, and 80 tomato plants");
+
+
     }
 
     public void runThursday() {
         currentDay = Day.THURSDAY;
         printDay();
         runMorning();
+        console.println("As Froilan goes to buy a combine harvester, Froilanda once again fertilizes the crops.");
+        console.println(Froilanda.getInstance().mount(CropDuster.getINSTANCE()));
+        console.println(Froilanda.getInstance().flyAircraft(CropDuster.getINSTANCE()));
+        console.println(CropDuster.getINSTANCE().makeNoise());
+        CropDuster.getINSTANCE().fertilize();
+        console.println(Froilanda.getInstance().dismount(CropDuster.getINSTANCE()));
+        console.println("Froilan organizes the silo because he doesn't get to do cool things.");
 
     }
+
     public void runFriday() {
         currentDay = Day.FRIDAY;
         printDay();
         runMorning();
+        console.println("Afternoon comes and Froilanda takes out the combine harvester.");
+        console.println(Froilanda.getInstance().mount(CombineHarvester.getINSTANCE()));
+        console.println(CombineHarvester.getINSTANCE().makeNoise());
+        CombineHarvester.getINSTANCE().operate();
+        console.println(Froilanda.getInstance().dismount(CombineHarvester.getINSTANCE()));
+        console.println("The entire field is harvested at once and separated into the silo.");
+        console.println("Meanwhile, Froilan is on egg duty once again.");
+        console.println(farm.getCoops().get(0).getChickens().get(0).makeNoise());
+        console.println(Froilan.getInstance().harvestEggs(farm));
 
     }
     public void runSaturday() {
