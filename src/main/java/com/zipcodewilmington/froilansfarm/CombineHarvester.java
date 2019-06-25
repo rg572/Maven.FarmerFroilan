@@ -21,8 +21,8 @@ public final class CombineHarvester extends Vehicle implements FarmVehicle {
             ArrayList<Crop> cr = cropRow.getCropRow();
             for (Crop crop : cr) {
                 harvest(crop);
-                cr.remove(crop);
             }
+            cr.clear();
         }
     }
 

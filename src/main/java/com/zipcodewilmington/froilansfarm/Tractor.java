@@ -25,8 +25,8 @@ public final class Tractor extends Vehicle implements FarmVehicle {
         ArrayList<Crop> cr = cropRow.getCropRow();
         for (Crop c : cr) {
             harvest(c);
-            cr.remove(c);
         }
+        cr.clear();
     }
 
     public String makeNoise() {
