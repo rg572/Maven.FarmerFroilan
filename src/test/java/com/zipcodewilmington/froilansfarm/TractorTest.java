@@ -20,9 +20,9 @@ public class TractorTest {
     public void getName() {
         Tractor tractor = new Tractor();
         String actual = tractor.getName();
-        String exptected = "Tractor";
+        String expected = "Tractor";
 
-        Assert.assertEquals(exptected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
    @Test

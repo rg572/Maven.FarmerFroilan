@@ -46,6 +46,10 @@ public final class CombineHarvester extends Vehicle implements FarmVehicle {
 
     }
 
+    public Rider getRider(){
+        return rider;
+    }
+
     @Override
     public void removeRider() {
         if (rider == null) ;
