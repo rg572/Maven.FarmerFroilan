@@ -25,4 +25,8 @@ public class Silo extends Storage<Edible> {
         food.add(edible);
     }
 
+    public ArrayList<Edible> getFood(){
+        return food;
+    }
+
 }

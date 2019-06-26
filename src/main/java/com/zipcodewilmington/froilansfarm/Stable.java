@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Stable extends AnimalStorage<Horse> {
 
@@ -16,5 +17,9 @@ public class Stable extends AnimalStorage<Horse> {
 
     public ArrayList<Horse> getHorses(){
         return horses;
+    }
+
+    public Iterator iterator(){
+        return horses.iterator();
     }
 }

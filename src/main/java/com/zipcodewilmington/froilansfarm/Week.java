@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Week {
@@ -64,7 +65,7 @@ public class Week {
 
     }
 
-    private void runBurnItDown() {
+    protected void runBurnItDown() {
         console.println("Froilan and Froilanda, after a week of magical produce, have gone psychotic and decide to burn it all down.");
         delay(100L);
         console.println("All the animals escape into the wilderness, trampling the fields.");
@@ -214,7 +215,9 @@ public class Week {
         Integer cornLost = 0;
         Integer horsesLost = 0;
         for(Stable stable : farm.getStables()){
-            for(Horse horse : stable.getHorses()){
+            Iterator itr = stable.iterator();
+            while(itr.hasNext()){
+                Horse horse = (Horse)itr.next();
                 rider.mount(horse);
                 rider.dismount(horse);
 
@@ -223,7 +226,7 @@ public class Week {
                     cornLost+=3;
                 }
                 else{
-                    stable.remove(horse);
+                    itr.remove();
                     horsesLost++;
                 }
 

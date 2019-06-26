@@ -5,8 +5,8 @@ package com.zipcodewilmington.froilansfarm;
  */
 public class MainApplication {
 
-    private static void simulateWeek() {
-        Console console = new Console(System.in, System.out);
+    protected static void simulateWeek(Console console) {
+        //Console console = new Console(System.in, System.out);
         String begin = "";
         while (begin.isEmpty()) begin = console.getStringInput("Are you ready for the week?");
         if (!begin.equalsIgnoreCase("yes")) {
@@ -24,7 +24,8 @@ public class MainApplication {
 
 
     public static void main(String[] args) {
-        simulateWeek();
+        Console console = new Console(System.in, System.out);
+        simulateWeek(console);
     }
 
 }

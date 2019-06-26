@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Map;
 
 import static org.junit.Assert.*;
@@ -126,6 +127,7 @@ public class WeekTest {
         Week week = new Week(farm, console);
 
         // Act
+        week.runSunday();
         week.runMonday();
 
         // Assert
@@ -191,6 +193,159 @@ public class WeekTest {
 
         // Act
         week.runSaturday();
+        String actual = new String(baos.toByteArray());
+
+        // Assert
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void runTuesdayTest(){
+        // Arrange
+        Farm farm = new Farm();
+        farm.setUpFarm();
+        Console console = new Console(System.in, System.out);
+        Week week = new Week(farm, console);
+        Integer expectedCorn = 200;
+        Integer expectedPotatoes = 30;
+        Integer expectedTomatoes = 10;
+
+        // Act
+        week.runSunday();
+        week.runMonday();
+        week.runTuesday();
+        ArrayList<Edible> food = Silo.getInstance().getFood();
+        Integer actualCorn = getNumberOfEdible(food, Edible.EARCORN);
+        Integer actualPotatoes = getNumberOfEdible(food, Edible.POTATO);
+        Integer acutalTomatoes = getNumberOfEdible(food, Edible.TOMATO);
+
+        // Assert
+        Assert.assertEquals(expectedCorn, actualCorn);
+        Assert.assertEquals(expectedPotatoes, actualPotatoes);
+        Assert.assertEquals(expectedTomatoes, acutalTomatoes);
+
+    }
+
+    @Test
+    public void runThursdayTest(){
+        // Arrange
+        Farm farm = new Farm();
+        farm.setUpFarm();
+        Console console = new Console(System.in, System.out);
+        Week week = new Week(farm, console);
+
+        // Act
+        week.runWednesday();
+        week.runThursday();
+
+        // Assert
+        for(CropRow cropRow : Field.getINSTANCE().getMap().values()){
+            for(Object o : cropRow.getCropRow()){
+                Crop crop = (Crop)o;
+                Assert.assertTrue(crop.hasBeenFertilized);
+            }
+        }
+    }
+
+    public Integer getNumberOfEdible(ArrayList<Edible> food, Edible edibleToCount){
+        Integer count =0;
+        for(Edible edible : food){
+            if (edible.equals(edibleToCount)){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    @Test
+    public void runFridayTest(){
+        // Arrange
+        Farm farm = new Farm();
+        farm.setUpFarm();
+        Console console = new Console(System.in, System.out);
+        Week week = new Week(farm, console);
+        Integer expectedPotatoes = 60;
+        Integer expectedTomatoes = 80;
+        Integer expectedCorn = 250;
+        Integer expectedEdamame = 70;
+        Integer expectedOkra =50;
+        Integer expectedCrops = 0;
+
+        // Act
+        week.runWednesday();
+        week.runThursday();
+        week.runFriday();
+        ArrayList<Edible> food = Silo.getInstance().getFood();
+        Integer actualCorn = getNumberOfEdible(food, Edible.EARCORN);
+        Integer actualPotatoes = getNumberOfEdible(food, Edible.POTATO);
+        Integer actualTomatoes = getNumberOfEdible(food, Edible.TOMATO);
+        Integer actaulEdamame =getNumberOfEdible(food, Edible.EDAMAME);
+        Integer actualOkra = getNumberOfEdible(food, Edible.OKRA);
+        Integer cropsInField = 0;
+        for(CropRow cropRow : Field.getINSTANCE().getCropRows()){
+            for(Object o: cropRow.getCropRow()){
+                cropsInField++;
+            }
+        }
+
+        // Assert
+        Assert.assertEquals(expectedCorn, actualCorn);
+        Assert.assertEquals(expectedPotatoes, actualPotatoes);
+        Assert.assertEquals(expectedTomatoes, actualTomatoes);
+        Assert.assertEquals(expectedEdamame, actaulEdamame);
+        Assert.assertEquals(expectedOkra, actualOkra);
+        Assert.assertEquals(expectedCrops, cropsInField);
+
+    }
+
+
+    @Test
+    public void starvationTest(){
+        // Arrange
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream out = new PrintStream(baos);
+        Console console = new Console(System.in, out);
+        Farm farm = new Farm();
+        farm.setUpFarm();
+        Week week = new Week(farm, console);
+        farm.getHouse().getFridge().remove(Edible.EARCORN,10000, Froilan.getInstance());
+        String expected = "Froilanda rode all the horses.\n" +
+                "Froilan fed 0 ears of corn to the horses. 10 died of starvation\n" +
+                "There isn't enough food in the fridge for Froilan's breakfast. He starves to death\n" +
+                "There isn't enough food in the fridge for Froilanda's breakfast. She starves to death\n";
+
+        // Act
+        week.runMorning();
+        String actual = new String(baos.toByteArray());
+
+        // Assert
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void runBurnItDownTest(){
+        // Arrange
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream out = new PrintStream(baos);
+        Console console = new Console(System.in, out);
+        Farm farm = new Farm();
+        farm.setUpFarm();
+        Week week = new Week(farm, console);
+        String expected = "Froilan and Froilanda, after a week of magical produce, have gone psychotic and decide to burn it all down.\n" +
+                "All the animals escape into the wilderness, trampling the fields.\n" +
+                "Watching the animals break free, Froilanda remarks:\n" +
+                "I'm sick of this shit.\n" +
+                "Froilanda leaves with them, riding a horse at the head of the stampede.\n" +
+                "The farm vehicles explode, due to highly flammable fertilizer and pesticides.\n" +
+                "Froilan looks at this all and says:\n" +
+                "Write more fucking tests\n" +
+                "Froilan sits laughing to himself surrounded by the burning farm.\n" +
+                "The end.\n";
+
+        // Act
+        week.runBurnItDown();
         String actual = new String(baos.toByteArray());
 
         // Assert
